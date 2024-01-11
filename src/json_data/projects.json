@@ -1,0 +1,88 @@
+{
+  "devFullName": "Sudipta Kumar Paik",
+  "pageTitle": "Projects",
+  "pageSubTitle": "\uD83D\uDE80 Full Stack Developer | \uD83D\uDCBB Tech Enthusiast | \uD83C\uDF10 Open Source Contributor",
+  "titleDetail": "AWS Certified | 13+ Years in Software Development | JAVA | SpringBoot | Python | ExpressJs | TypeScript | AWS Serverless | MongoDB",
+  "techStackTitle": "Tech stacks",
+  "projectList": [
+    {
+      "label": "Alohavillas.io",
+      "url": "alohavillas.io",
+      "target": "self",
+      "description": "Travel website",
+      "workType": "Official"
+    },
+    {
+      "label": "jeda.io",
+      "url": "jeda.io",
+      "description": "AI Whiteboard web application",
+      "workType": "Side Project"
+    },
+    {
+      "label": "Bedroomvillas.co.uk",
+      "url": "bedroomvillas.co.uk",
+      "description": "Travel website",
+      "workType": "Official"
+    },
+    {
+      "label": "Bedroomvillas.com.au",
+      "url": "bedroomvillas.com.au",
+      "description": "Travel website",
+      "workType": "Official"
+    },
+    {
+      "label": "Execstays.com",
+      "url": "execstays.com",
+      "description": "Travel website",
+      "workType": "Official"
+    },
+    {
+      "label": "Meilleureslocations.fr",
+      "url": "meilleureslocations.fr",
+      "description": "Travel website",
+      "workType": "Official"
+    },
+    {
+      "label": "Rentalhomes24.de",
+      "url": "rentalhomes24.de",
+      "description": "Travel website",
+      "workType": "Official"
+    },
+    {
+      "label": "Stays.io",
+      "url": "stays.io",
+      "description": "Travel website",
+      "workType": "Official"
+    },
+    {
+      "label": "Summerrentals.io",
+      "url": "summerrentals.io",
+      "description": "Travel website",
+      "workType": "Official"
+    },
+    {
+      "label": "Vacationhome.rent",
+      "url": "vacationhome.rent",
+      "description": "Travel website",
+      "workType": "Official"
+    },
+    {
+      "label": "bedroomvillas.com",
+      "url": "bedroomvillas.com",
+      "description": "Travel website",
+      "workType": "Official"
+    },
+    {
+      "label": "rentalhomes.com",
+      "url": "rentalhomes.com",
+      "description": "Travel website",
+      "workType": "Official"
+    },
+    {
+      "label": "qeasy.io",
+      "url": "qeasy.io",
+      "description": "Queue management web application",
+      "workType": "Official"
+    }
+  ]
+}

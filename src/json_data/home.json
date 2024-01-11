@@ -1,0 +1,30 @@
+{
+  "devFullName": "Sudipta Kumar Paik",
+  "pageTitle": "\uD83D\uDC4B Hello, Nice to see you.",
+  "pageSubTitle": "\uD83D\uDE80 Full Stack Developer | \uD83D\uDCBB Tech Enthusiast | \uD83C\uDF10 Open Source Contributor",
+  "titleDetail": "AWS Certified | 13+ Years in Software Development | JAVA | SpringBoot | Python | ExpressJs | TypeScript | AWS Serverless | MongoDB",
+  "techStackTitle": "Tech stacks",
+  "techStacks": [
+    {
+      "label": "Backend",
+      "tech": "Java, Python, NodeJs, TypeScript and AWS Lambda"
+    },
+    {
+      "label": "Framework",
+      "tech": "SpringBoot, Magnolia CMS, Django, Flask, FastAPI, ExpressJs, AWS SAM"
+    },
+    {
+      "label": "Frontend",
+      "tech": "ReactJs, VueJs, NextJs, NuxtJs, Electron and Bootstrap CSS"
+    },
+    {
+      "label": "Database",
+      "tech": "PostgresSQL, MySQL, MongoDB, DynamoDB, Redis"
+    },
+    {
+      "label": "Cloud",
+      "tech": "AWS S3, Cognito, CDK, EC2, Fargate, Textract, SQS, IAM, Route53, API Gateway, Terraform"
+    }
+  ],
+  "studyInfo": "I hold a Bachelor Degree in Computer Science and Engineering."
+}

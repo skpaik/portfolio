@@ -1,11 +1,10 @@
 'use client'
 
-import Image from 'next/image'
-
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import {useEffect, useState} from 'react'
 
-import { usePathname } from 'next/navigation'
+import {usePathname} from 'next/navigation'
+
 export default function Header() {
 
     const routerPathname = usePathname()
@@ -16,6 +15,10 @@ export default function Header() {
 
     const menuLinks = [
         {
+            title: 'Home',
+            href: '/',
+            external: false,
+        }, {
             title: 'About',
             href: 'about',
             external: false,
@@ -51,7 +54,7 @@ export default function Header() {
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                     <div className="flex-1 md:flex md:items-center md:gap-12">
-                        <a className="block text-teal-600" href="/">
+                        <a className="block text-teal-600" href="/portfolio">
                             <span className="sr-only">Home</span>
                             <svg className="h-8" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -65,7 +68,7 @@ export default function Header() {
                     <div className="md:flex md:items-center md:gap-12">
                         <nav aria-label="Global" className="hidden md:block">
                             <ul className="flex items-center gap-6 text-sm">
-                                {menuLinks.map((menuLink, index, { length }) => {
+                                {menuLinks.map((menuLink, index, {length}) => {
                                     const isLast = index === length - 1
 
                                     return (
@@ -78,7 +81,7 @@ export default function Header() {
                                                 })}
                                                 className="text-gray-500 transition hover:text-gray-500/75"
                                             >
-                                                    {menuLink.title}
+                                                {menuLink.title}
 
                                             </Link>
                                         </li>
@@ -107,7 +110,8 @@ export default function Header() {
                             </div>
 
                             <div className="block md:hidden">
-                                <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+                                <button
+                                    className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         className="h-5 w-5"
@@ -116,7 +120,7 @@ export default function Header() {
                                         stroke="currentColor"
                                         strokeWidth="2"
                                     >
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
                                     </svg>
                                 </button>
                             </div>

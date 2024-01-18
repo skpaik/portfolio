@@ -1,0 +1,83 @@
+{
+  "pageTitle": "Blog",
+  "pageSubTitle": "Thoughts of SpringBoot",
+  "currentPage": {
+    "linkText": "Previous Page 69",
+    "url": "page2"
+  },
+  "previousPage": {
+    "linkText": "Previous Page",
+    "url": "page1"
+  },
+  "nextPage": {
+    "linkText": "Next Page",
+    "url": "page3"
+  },
+  "blogList": [
+    {
+      "label": "Blog title 3",
+      "url": "title-3",
+      "dateTime": "2023-01-12",
+      "contents": [
+        "Line 1",
+        "Line 2"
+      ],
+      "tags": [
+        "Flask",
+        "VueJs"
+      ]
+    },
+    {
+      "label": "Blog title 4",
+      "url": "title-4",
+      "dateTime": "2024-01-12",
+      "contents": [
+        "Line 3",
+        "Line 4"
+      ],
+      "tags": [
+        "Django",
+        "ReactJs"
+      ]
+    },
+    {
+      "label": "Blog title 5",
+      "url": "title-5",
+      "dateTime": "2024-01-12",
+      "contents": [
+        "Line 3",
+        "Line 4"
+      ],
+      "tags": [
+        "Django",
+        "ReactJs"
+      ]
+    },
+    {
+      "label": "Blog title 6",
+      "url": "title-6",
+      "dateTime": "2024-01-12",
+      "contents": [
+        "Line 3",
+        "Line 4"
+      ],
+      "tags": [
+        "Django",
+        "ReactJs"
+      ]
+    },
+    {
+      "label": "Blog title 7",
+      "url": "title-7",
+      "dateTime": "2024-01-12",
+      "contents": [
+        "Line 3",
+        "Line 4"
+      ],
+      "tags": [
+        "Django",
+        "ReactJs"
+      ]
+    }
+  ]
+}

@@ -20,22 +20,22 @@ export default function Header() {
             external: false,
         }, {
             title: 'About',
-            href: 'about',
+            href: '/about',
             external: false,
         },
         {
             title: 'Career',
-            href: 'career',
+            href: '/career',
             external: false,
         },
         {
             title: 'Projects',
-            href: 'projects',
+            href: '/projects',
             external: false,
         },
         {
             title: 'Blog',
-            href: 'blog',
+            href: '/blog',
             external: false,
         },
     ]

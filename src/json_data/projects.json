@@ -4,11 +4,15 @@
   "pageSubTitle": "List of Projects I worked",
   "titleDetail": "AWS Certified | 13+ Years in Software Development | JAVA | SpringBoot | Python | ExpressJs | TypeScript | AWS Serverless | MongoDB",
   "techStackTitle": "Tech stacks",
+  "linkText": "Details",
   "projectList": [
     {
       "label": "Alohavillas.io",
       "url": "alohavillas.io",
-      "tech": "Flask, VueJs",
+      "techStack": [
+        "Flask",
+        "VueJs"
+      ],
       "target": "self",
       "description": "Travel website",
       "workType": "Official"
@@ -16,72 +20,120 @@
     {
       "label": "jeda.io",
       "url": "jeda.io",
+      "techStack": [
+        "Flask",
+        "VueJs"
+      ],
       "description": "AI Whiteboard web application",
       "workType": "Side Project"
     },
     {
       "label": "Bedroomvillas.co.uk",
       "url": "bedroomvillas.co.uk",
+      "techStack": [
+        "Flask",
+        "VueJs"
+      ],
       "description": "Travel website",
       "workType": "Official"
     },
     {
       "label": "Bedroomvillas.com.au",
       "url": "bedroomvillas.com.au",
+      "techStack": [
+        "Flask",
+        "VueJs"
+      ],
       "description": "Travel website",
       "workType": "Official"
     },
     {
       "label": "Execstays.com",
       "url": "execstays.com",
+      "techStack": [
+        "Flask",
+        "VueJs"
+      ],
       "description": "Travel website",
       "workType": "Official"
     },
     {
       "label": "Meilleureslocations.fr",
       "url": "meilleureslocations.fr",
+      "techStack": [
+        "Flask",
+        "VueJs"
+      ],
       "description": "Travel website",
       "workType": "Official"
     },
     {
       "label": "Rentalhomes24.de",
       "url": "rentalhomes24.de",
+      "techStack": [
+        "Flask",
+        "VueJs"
+      ],
       "description": "Travel website",
       "workType": "Official"
     },
     {
       "label": "Stays.io",
       "url": "stays.io",
+      "techStack": [
+        "Flask",
+        "VueJs"
+      ],
       "description": "Travel website",
       "workType": "Official"
     },
     {
       "label": "Summerrentals.io",
       "url": "summerrentals.io",
+      "techStack": [
+        "Flask",
+        "VueJs"
+      ],
       "description": "Travel website",
       "workType": "Official"
     },
     {
       "label": "Vacationhome.rent",
       "url": "vacationhome.rent",
+      "techStack": [
+        "Flask",
+        "VueJs"
+      ],
       "description": "Travel website",
       "workType": "Official"
     },
     {
       "label": "bedroomvillas.com",
       "url": "bedroomvillas.com",
+      "techStack": [
+        "Flask",
+        "VueJs"
+      ],
       "description": "Travel website",
       "workType": "Official"
     },
     {
       "label": "rentalhomes.com",
       "url": "rentalhomes.com",
+      "techStack": [
+        "Flask",
+        "VueJs"
+      ],
       "description": "Travel website",
       "workType": "Official"
     },
     {
       "label": "qeasy.io",
       "url": "qeasy.io",
+      "techStack": [
+        "django",
+        "PostgresSQL"
+      ],
       "description": "Queue management web application",
       "workType": "Official"
     }

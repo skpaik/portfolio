@@ -4,8 +4,9 @@ import {loadJsonContents} from "@/libs/JsonFileService";
 import Link from "next/link";
 import Image from "next/image";
 
-interface HomeContents {
+interface ProjectsContents {
     pageTitle: string
+    pageSubTitle: string
     projectList: [
         {
             label: string,
@@ -18,10 +19,10 @@ interface HomeContents {
 }
 
 export default async function Home() {
-    const pageContent: HomeContents = await loadJsonContents("projects")
+    const pageContent: ProjectsContents = await loadJsonContents("projects")
     return (
         <>
-            <HeroBanner title={pageContent.pageTitle}>
+            <HeroBanner title={pageContent.pageTitle} subtitle={pageContent.pageSubTitle}>
 
             </HeroBanner>
             <PageContents classNames="">

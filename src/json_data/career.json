@@ -1,0 +1,153 @@
+{
+  "pageTitle": "Career",
+  "pageSubTitle": "List of Company I worked",
+  "betweenText": "to",
+  "skillsText": "Skills",
+  "linkText": "More",
+  "workList": [
+    {
+      "company": "TBSCG",
+      "company_url": "tbscg.com",
+      "company_logo_url": "tbscg.com",
+      "designation": "Java AWS Developer",
+      "description": "Magnolia CMS and AWS SAM Developer",
+      "start_date": "2023-05-02",
+      "end_date": "2023-09-30",
+      "location": "Remote",
+      "skills": [
+        "Magnolia CMS",
+        "TypeScript",
+        "Terraform",
+        "OKTA"
+      ]
+    },
+    {
+      "company": "Traaal Tourism",
+      "company_url": "traaal.com",
+      "company_logo_url": "tbscg.com",
+      "designation": "Technical Team Lead",
+      "description": "Luxury fleet management system development",
+      "start_date": "2021-06-10",
+      "end_date": "2022-04-30",
+      "location": "Remote",
+      "skills": [
+        "NodeJs",
+        "JavaScript",
+        "ExpressJs",
+        "MongoDB",
+        "AWS EC2"
+      ]
+    },
+    {
+      "company": "W3 Engineers Ltd",
+      "company_url": "w3engineers.com",
+      "company_logo_url": "tbscg.com",
+      "designation": "Technical Lead",
+      "description": "Lead Web and Android Apps development",
+      "start_date": "2015-01-01",
+      "end_date": "2021-05-30",
+      "location": "Khulna, Bangladesh",
+      "skills": [
+        "Java",
+        "NodeJs",
+        "JavaScript",
+        "ExpressJs",
+        "MongoDB",
+        "AWS EC2"
+      ]
+    },
+    {
+      "company": "Genweb2 Ltd",
+      "company_url": "Genweb2",
+      "company_logo_url": "tbscg.com",
+      "designation": "Software Engineer",
+      "description": "Web apps development",
+      "start_date": "2014-03-17",
+      "end_date": "2015-12-29",
+      "location": "Dhaka, Bangladesh",
+      "skills": [
+        "Agile Environment",
+        ".NET Framework",
+        "ASP.NET",
+        "Object-Oriented Programming (OOP)",
+        "C#"
+      ]
+    },
+    {
+      "company": "Mercury IT International Limited",
+      "company_url": "mercurybd.com",
+      "company_logo_url": "https://www.mercurybd.com/assets/images/logo-orig.png",
+      "designation": "Software Engineer",
+      "description": "Web apps development",
+      "start_date": "2012-08-27",
+      "end_date": "2014-02-28",
+      "location": "Dhaka, Bangladesh",
+      "skills": [
+        "Agile Environment",
+        ".NET Framework",
+        "ASP.NET",
+        "ASP.NET MVC2",
+        "Object-Oriented Programming (OOP)",
+        "C#"
+      ]
+    },
+    {
+      "company": "Insightin Technology Bangladesh Ltd",
+      "company_url": "insightintechnology.com",
+      "company_logo_url": "insightintechnology.com",
+      "designation": "Software Engineer",
+      "description": "Web apps development",
+      "start_date": "2011-11-01",
+      "end_date": "2012-08-27",
+      "location": "Dhaka, Bangladesh",
+      "skills": [
+        "Agile Environment",
+        ".NET Framework",
+        "ASP.NET",
+        "ASP.NET MVC2",
+        "Microsoft SQL Server",
+        "Object-Oriented Programming (OOP)",
+        "C#"
+      ]
+    },
+    {
+      "company": "HawarIT Ltd",
+      "company_url": "hawarit.com",
+      "company_logo_url": "hawarit.com",
+      "designation": "Software Engineer",
+      "description": "Web apps development",
+      "start_date": "2011-02-01",
+      "end_date": "2011-10-30",
+      "location": "Dhaka, Bangladesh",
+      "skills": [
+        "Agile Environment",
+        ".NET Framework",
+        "ASP.NET",
+        "ASP.NET MVC2",
+        "Microsoft SQL Server",
+        "Object-Oriented Programming (OOP)",
+        "C#",
+        "Umbraco"
+      ]
+    },
+    {
+      "company": "Simplexhub Ltd",
+      "company_url": "simplexhub.com",
+      "company_logo_url": "Simplexhub.com",
+      "designation": "Software Engineer",
+      "description": "Web apps development",
+      "start_date": "2010-07-31",
+      "end_date": "2011-00-30",
+      "location": "Dhaka, Bangladesh",
+      "skills": [
+        "Agile Environment",
+        ".NET Framework",
+        "ASP.NET",
+        "ASP.NET MVC2",
+        "Object-Oriented Programming (OOP)",
+        "C#",
+        "Umbraco"
+      ]
+    }
+  ]
+}

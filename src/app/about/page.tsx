@@ -2,8 +2,9 @@ import HeroBanner from "@/app/_components/HeaderBanner";
 import PageContents from "@/app/_components/PageContents";
 import {loadJsonContents} from "@/libs/JsonFileService";
 
-interface AboutContents{
-    contents: string
+interface AboutContents {
+    intro: string
+    para: [string]
 }
 
 export default async function About() {
@@ -11,15 +12,15 @@ export default async function About() {
 
     return (
         <>
-            <HeroBanner title="About UI"
-                        subtitle="Free Open Source Tailwind CSS Components">
-                HyperUI is a collection of free Tailwind CSS components that can be used in your next
-                project. With a range of components, you can build your next marketing website, admin
-                dashboard, eCommerce store and much more.
+            <HeroBanner title="About" subtitle={pageContent.intro}>
             </HeroBanner>
             <PageContents classNames="">
                 <ul className="space-y-8">
-                    {pageContent.contents}
+                    {pageContent.para.map((para, index) => {
+                        return <li key={index}>
+                            {para}
+                        </li>
+                    })}
                 </ul>
             </PageContents>
         </>

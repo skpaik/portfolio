@@ -1,13 +1,14 @@
 {
   "devFullName": "Sudipta Kumar Paik",
   "pageTitle": "Projects",
-  "pageSubTitle": "\uD83D\uDE80 Full Stack Developer | \uD83D\uDCBB Tech Enthusiast | \uD83C\uDF10 Open Source Contributor",
+  "pageSubTitle": "List of Projects I worked",
   "titleDetail": "AWS Certified | 13+ Years in Software Development | JAVA | SpringBoot | Python | ExpressJs | TypeScript | AWS Serverless | MongoDB",
   "techStackTitle": "Tech stacks",
   "projectList": [
     {
       "label": "Alohavillas.io",
       "url": "alohavillas.io",
+      "tech": "Flask, VueJs",
       "target": "self",
       "description": "Travel website",
       "workType": "Official"

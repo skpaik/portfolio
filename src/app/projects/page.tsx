@@ -21,7 +21,7 @@ interface ProjectsContents {
     ]
 }
 
-export default async function Home() {
+export default async function Projects() {
     const pageContent: ProjectsContents = await loadJsonContents("projects")
     return (
         <>

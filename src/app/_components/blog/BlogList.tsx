@@ -14,7 +14,7 @@ export default function BlogList({blogList, currentPage}: Props) {
         <div className="grid grid-cols-1 gap-y-8 lg:items-center lg:gap-x-16">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                 {blogList.map((blogContent: BlogContent, index) => {
-                    return <article
+                    return <article key={index}
                         className="hover:animate-background rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s]">
                         <div className="rounded-[10px] bg-white p-4 !pt-20 sm:p-6">
                             <time dateTime="2022-10-10" className="block text-xs text-gray-500">

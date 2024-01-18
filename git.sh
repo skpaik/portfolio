@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 git add .
-git commit -m "git.sh file added"
+git commit -m "key added in BlogList.tsx"
 git push origin main

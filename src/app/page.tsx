@@ -3,10 +3,10 @@ import PageContents from "@/app/_components/PageContents";
 import {loadJsonContents} from "@/libs/JsonFileService";
 import Image from "next/image";
 import Link from "next/link";
-import {HomeContents} from "@/app/_models/ContentsModel";
+import {HomeContent} from "@/app/_models/ContentsModel";
 
 export default async function Home() {
-    const pageContent: HomeContents = await loadJsonContents("home")
+    const pageContent: HomeContent = await loadJsonContents("home")
 
     return (
         <>

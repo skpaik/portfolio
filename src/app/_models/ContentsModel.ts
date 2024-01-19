@@ -39,7 +39,7 @@ export interface FooterContent {
     ]
 }
 
-export interface HomeContents extends BaseStaticContent {
+export interface HomeContent extends BaseStaticContent {
     devFullName: string
     titleDetail: string
     techStackTitle: string
@@ -52,7 +52,7 @@ export interface HomeContents extends BaseStaticContent {
     studyInfo: string
 }
 
-export interface CareerContents extends BaseStaticContent {
+export interface CareerContent extends BaseStaticContent {
 
     betweenText: string
     skillsText: string
@@ -60,8 +60,7 @@ export interface CareerContents extends BaseStaticContent {
     workList: CompanyIWork []
 }
 
-export interface ProjectsContents extends BaseStaticContent {
-
+export interface ProjectsContent extends BaseStaticContent {
     techStackTitle: string
     linkText: string
     projectList: ProjectIWork[]
@@ -90,16 +89,33 @@ export interface CompanyIWork {
 }
 
 
-export interface AboutContents extends BaseStaticContent {
+export interface AboutContent extends BaseStaticContent {
     intro: string
     contents: [string]
 }
 
-export interface TermsContents extends BaseStaticContent {
+export interface TermsContent extends BaseStaticContent {
     intro: string
     contents: [string]
 }
-export interface PrivacyContents extends BaseStaticContent {
+export interface PrivacyContent extends BaseStaticContent {
     intro: string
     contents: [string]
+}
+export interface ContactPhoneNumber {
+    phone: string
+    countryCode?: string
+    type: string
+}
+export interface ContactAddress {
+    house: string
+    road: string
+    country?: string
+    type: string
+}
+export interface ContactContent extends BaseStaticContent {
+    intro: string
+    contents: [string]
+    phoneNumberList: ContactPhoneNumber[]
+    addressList: ContactAddress[]
 }

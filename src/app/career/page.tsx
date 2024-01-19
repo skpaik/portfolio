@@ -2,11 +2,11 @@ import HeroBanner from "@/app/_components/HeaderBanner";
 import PageContents from "@/app/_components/PageContents";
 import {loadJsonContents} from "@/libs/JsonFileService";
 
-import {CareerContents} from "@/app/_models/ContentsModel";
+import {CareerContent} from "@/app/_models/ContentsModel";
 import CareerCard from "@/app/_components/career/CareerCard";
 
 export default async function Career() {
-    const pageContent: CareerContents = await loadJsonContents("career")
+    const pageContent: CareerContent = await loadJsonContents("career")
     return (
         <>
             <HeroBanner title={pageContent.pageTitle} subtitle={pageContent.pageSubTitle}>

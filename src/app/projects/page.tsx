@@ -1,11 +1,11 @@
 import HeroBanner from "@/app/_components/HeaderBanner";
 import PageContents from "@/app/_components/PageContents";
 import {loadJsonContents} from "@/libs/JsonFileService";
-import {ProjectsContents} from "@/app/_models/ContentsModel";
+import {ProjectsContent} from "@/app/_models/ContentsModel";
 import ProjectCard from "@/app/_components/project/ProjectCard";
 
 export default async function Projects() {
-    const pageContent: ProjectsContents = await loadJsonContents("projects")
+    const pageContent: ProjectsContent = await loadJsonContents("projects")
     return (
         <>
             <HeroBanner title={pageContent.pageTitle} subtitle={pageContent.pageSubTitle}>

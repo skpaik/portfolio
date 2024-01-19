@@ -2,11 +2,11 @@
 import {toDateFormat} from "@/libs/Utils";
 import Badge from "@/app/_components/ui/Badge";
 import Link from "next/link";
-import {CareerContents, CompanyIWork} from "@/app/_models/ContentsModel";
+import {CareerContent, CompanyIWork} from "@/app/_models/ContentsModel";
 
 type Props = {
     companyInfo: CompanyIWork,
-    pageContent: CareerContents,
+    pageContent: CareerContent,
 }
 
 export default function CareerCard({companyInfo, pageContent}: Props) {

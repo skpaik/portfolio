@@ -1,11 +1,11 @@
 'use client'
 import Badge from "@/app/_components/ui/Badge";
 import Link from "next/link";
-import {ProjectIWork, ProjectsContents} from "@/app/_models/ContentsModel";
+import {ProjectIWork, ProjectsContent} from "@/app/_models/ContentsModel";
 
 type Props = {
     projectInfo: ProjectIWork,
-    pageContent: ProjectsContents,
+    pageContent: ProjectsContent,
 }
 
 export default function ProjectCard({projectInfo, pageContent}: Props) {

@@ -1,9 +1,9 @@
 import HeroBanner from "@/app/_components/HeaderBanner";
 import PageContents from "@/app/_components/PageContents";
 import {loadJsonContents} from "@/libs/JsonFileService";
-import { PrivacyContents} from "@/app/_models/ContentsModel";
+import { PrivacyContent} from "@/app/_models/ContentsModel";
 export default async function Terms() {
-    const pageContent: PrivacyContents = await loadJsonContents("privacy")
+    const pageContent: PrivacyContent = await loadJsonContents("privacy")
 
     return (
         <>

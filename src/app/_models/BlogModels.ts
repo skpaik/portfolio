@@ -16,12 +16,14 @@ export interface BlogContent {
     contents: [string]
     tags: [string]
 }
+
 export interface BlogMenu {
     label: string,
     url: string
     count: number
     isActive: boolean
 }
+
 export interface LinkPage {
     linkText: string,
     url: string

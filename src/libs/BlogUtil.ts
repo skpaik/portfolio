@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import {BlogContent, BlogContents, BlogMenu} from "@/app/_models/BlogModels";
+import {BlogContent, BlogMenu} from "@/app/_models/BlogModels";
 import {loadJsonContents} from "@/libs/JsonFileService";
 import {toTitleCase} from "@/libs/Utils";
 
@@ -29,6 +29,19 @@ export async function getFoldersInPath(): Promise<string[]> {
     }
 }
 
+function removeDuplicatesByProperty(array: BlogContent[], property: keyof BlogContent): BlogContent[] {
+    const uniqueObjects: { [key: string]: BlogContent } = {};
+
+    for (const obj of array) {
+        const key = obj[property];
+        if (!uniqueObjects[key]) {
+            uniqueObjects[key] = obj;
+        }
+    }
+
+    return Object.values(uniqueObjects);
+}
+
 export async function getAllUrlInAllFoldersInPath(): Promise<BlogContent[]> {
     try {
         const foldersInPath = await getFoldersInPath();
@@ -36,18 +49,14 @@ export async function getAllUrlInAllFoldersInPath(): Promise<BlogContent[]> {
         let blogList: BlogContent[] = []
 
         for (let i = 0; i < foldersInPath.length; i++) {
-            console.log(foldersInPath); //use i instead of 0
+            const blogContentList: BlogContent[] = await getBlogContentList(foldersInPath[i]);
 
-            const pageContent: BlogContents = await loadJsonContents("blog/" + foldersInPath[i] + "/index")
-
-            pageContent.blogList.forEach((element) => {
-                element.url = "/blog/" + pageContent.currentPage.url + "/" + element.url;
-                blogList.push(element);
-            });
-
-            // blogList.push(...pageContent.blogList);
+            blogList.push(...blogContentList);
         }
 
+        const uniqueBlogContents = removeDuplicatesByProperty(blogList, 'url');
+
+        console.error('uniqueBlogContents:', uniqueBlogContents);
         return blogList;
     } catch (error) {
         //console.error('Error:', error.message);
@@ -86,19 +95,20 @@ export async function getBlogContentList(currentPage: string): Promise<BlogConte
 
         const jsonFiles = await findAllJsonFiles(folderPath);
 
-        console.log("jsonFiles>>>" + jsonFiles); //use i instead of 0
+        //console.log("jsonFiles>>>" + jsonFiles); //use i instead of 0
 
         let blogContentList: BlogContent[] = [];
 
         for (let i = 0; i < jsonFiles.length; i++) {
-            console.log("jsonFiles[i]>>>" + jsonFiles[i]); //use i instead of 0
+            //console.log("jsonFiles[i]>>>" + jsonFiles[i]); //use i instead of 0
 
             const url = jsonFiles[i].replace(".json", "");
-            console.log("jsonFiles url>>>" + url); //use i instead of 0
+            //console.log("jsonFiles url>>>" + url); //use i instead of 0
 
             if (url !== "index") {
-                const blogContent: BlogContent = await loadJsonContents("blog/"+currentPage + "/" + url)
-                blogContent.url = url;
+                const endUrl="/blog/" + currentPage + "/" + url;
+                const blogContent: BlogContent = await loadJsonContents(endUrl)
+                blogContent.url = endUrl;
 
                 console.log(blogContent); //use i instead of 0
 
@@ -106,7 +116,7 @@ export async function getBlogContentList(currentPage: string): Promise<BlogConte
             }
         }
 
-        console.error('blogContentList:', blogContentList);
+        //console.error('blogContentList:', blogContentList);
         return blogContentList;
     } catch (error) {
         //console.error('Error:', error.message);

@@ -20,7 +20,7 @@ export default function BlogList({blogList, currentPage}: Props) {
                             <time dateTime="2022-10-10" className="block text-xs text-gray-500">
                                 {toDateFormat(blogContent.dateTime)}
                             </time>
-                            <Link href={"/blog/" + currentPage + "/" + blogContent.url}>
+                            <Link href={blogContent.url}>
                                 <h3 className="mt-0.5 text-lg font-medium text-gray-900">
                                     {blogContent.label}
                                 </h3>

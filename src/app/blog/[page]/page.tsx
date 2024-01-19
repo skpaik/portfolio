@@ -22,6 +22,7 @@ export default async function BlogPage({params: {page, totalPage}}: { params: { 
     const pageContent: BlogContents = await loadJsonContents("blog/" + page + "/index")
     const blogMenuList: BlogMenu[] = await getBlogMenu(page);
     const blogContentList: BlogContent[] = await getBlogContentList(page);
+
     return (
         <>
             <HeroBanner title={pageContent.pageTitle} subtitle={pageContent.pageSubTitle}>

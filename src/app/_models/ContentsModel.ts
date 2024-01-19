@@ -1,8 +1,15 @@
+export interface BaseStaticContent {
+    pageTitle: string
+    pageSubTitle: string
+}
+
+
 export interface LayoutContent {
     devFullName: string
     header: HeaderContent
     footer: FooterContent
 }
+
 export interface HeaderContent {
     topMenuLinks: [
         {
@@ -32,10 +39,8 @@ export interface FooterContent {
     ]
 }
 
-export interface HomeContents {
+export interface HomeContents extends BaseStaticContent {
     devFullName: string
-    pageTitle: string
-    pageSubTitle: string
     titleDetail: string
     techStackTitle: string
     techStacks: [
@@ -47,18 +52,16 @@ export interface HomeContents {
     studyInfo: string
 }
 
-export interface CareerContents {
-    pageTitle: string
-    pageSubTitle: string
+export interface CareerContents extends BaseStaticContent {
+
     betweenText: string
     skillsText: string
     linkText: string
     workList: CompanyIWork []
 }
 
-export interface ProjectsContents {
-    pageTitle: string
-    pageSubTitle: string
+export interface ProjectsContents extends BaseStaticContent {
+
     techStackTitle: string
     linkText: string
     projectList: ProjectIWork[]
@@ -86,7 +89,17 @@ export interface CompanyIWork {
     skills: [string]
 }
 
-export interface AboutContents {
+
+export interface AboutContents extends BaseStaticContent {
+    intro: string
+    contents: [string]
+}
+
+export interface TermsContents extends BaseStaticContent {
+    intro: string
+    contents: [string]
+}
+export interface PrivacyContents extends BaseStaticContent {
     intro: string
     contents: [string]
 }

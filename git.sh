@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 git add .
-git commit -m "Header and Footer Model Updated"
+git commit -m "Static Page Added"
 git push origin main

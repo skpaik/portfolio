@@ -19,7 +19,7 @@ export async function getFoldersInPath(): Promise<string[]> {
             fs.statSync(path.join(fullPath, item)).isDirectory()
         );
 
-        console.error('folders:', folders);
+        //console.error('folders:', folders);
 
         // Return the number of folders
         return folders;
@@ -54,9 +54,7 @@ export async function getAllUrlInAllFoldersInPath(): Promise<BlogContent[]> {
             blogList.push(...blogContentList);
         }
 
-        const uniqueBlogContents = removeDuplicatesByProperty(blogList, 'url');
-
-        console.error('uniqueBlogContents:', uniqueBlogContents);
+        //const uniqueBlogContents = removeDuplicatesByProperty(blogList, 'url');
         return blogList;
     } catch (error) {
         //console.error('Error:', error.message);
@@ -107,10 +105,14 @@ export async function getBlogContentList(currentPage: string): Promise<BlogConte
 
             if (url !== "index") {
                 const endUrl="/blog/" + currentPage + "/" + url;
-                const blogContent: BlogContent = await loadJsonContents(endUrl)
-                blogContent.url = endUrl;
 
-                console.log(blogContent); //use i instead of 0
+                const blogContent: BlogContent = await loadJsonContents(endUrl)
+
+                blogContent.url = endUrl;
+                blogContent.slug = url;
+                blogContent.page = currentPage;
+
+                //console.log(blogContent); //use i instead of 0
 
                 blogContentList.push(blogContent);
             }
@@ -125,7 +127,7 @@ export async function getBlogContentList(currentPage: string): Promise<BlogConte
 }
 
 async function findAllJsonFiles(folderPath: string): Promise<string[]> {
-    console.error('folderPath:', folderPath);
+    //console.error('folderPath:', folderPath);
     try {
 
         const fullPath = path.resolve(folderPath);

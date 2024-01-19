@@ -2,31 +2,34 @@
 import HeroBanner from "@/app/_components/HeaderBanner";
 import {getAllUrlInAllFoldersInPath} from "@/libs/BlogUtil";
 import {BlogContent} from "@/app/_models/BlogModels";
+import {loadJsonContents} from "@/libs/JsonFileService";
 
 export async function generateStaticParams() {
     const blogContents = await getAllUrlInAllFoldersInPath();
 
     const urls: Props[] = blogContents.map((blogContent: BlogContent) => ({
-        slug: blogContent.url,
-        totalPage: blogContents.length,
+        url: blogContent.url,
+        page: blogContent.page,
+        slug: blogContent.slug
     }));
 
-    console.log("generateStaticParams urls:")
-    console.log(urls)
     return urls;
 }
 
 type Props = {
-    slug: string,
-    totalPage: number,
+    page: string,
+    slug: string
 }
-export default function BlogSlug({params: {slug, totalPage}}: { params: Props }) {
-    console.log("totalPage:" + totalPage)
-    console.log("slug:" + slug)
+
+export default async function BlogSlug({params}: { params: Props }) {
+    const {page, slug} = params
+    const blogContent: BlogContent = await loadJsonContents("/blog/" + page + "/" + slug)
+    console.log(blogContent)
+
     return (
         <>
-            <HeroBanner title={slug} subtitle={slug}>
-                Blogs Page Slug {slug}
+            <HeroBanner title={page} subtitle={page}>
+                Blogs Page Slug {page}
             </HeroBanner>
         </>
     )

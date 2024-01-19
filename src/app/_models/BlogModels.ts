@@ -10,6 +10,8 @@ export interface BlogContents {
 export interface BlogContent {
     label: string,
     url: string
+    page: string
+    slug: string
     dateTime: string
     contents: [string]
     tags: [string]

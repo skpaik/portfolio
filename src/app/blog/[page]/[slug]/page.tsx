@@ -4,19 +4,18 @@ import {getAllUrlInAllFoldersInPath} from "@/libs/BlogUtil";
 import {BlogContent} from "@/app/_models/BlogModels";
 
 export async function generateStaticParams() {
+    const blogContents = await getAllUrlInAllFoldersInPath();
 
-    const targetPath = './src/json_data/blog';
-    const blogContents = await getAllUrlInAllFoldersInPath(targetPath);
-
-    const  urls: Props[]=blogContents.map((blogContent: BlogContent) => ({
+    const urls: Props[] = blogContents.map((blogContent: BlogContent) => ({
         slug: blogContent.url,
         totalPage: blogContents.length,
     }));
 
-    console.log("generateStaticParams urls:" )
+    console.log("generateStaticParams urls:")
     console.log(urls)
     return urls;
 }
+
 type Props = {
     slug: string,
     totalPage: number,

@@ -1,9 +1,12 @@
 import fs from 'fs';
 import path from 'path';
-import {BlogContent, BlogContents} from "@/app/_models/BlogModels";
+import {BlogContent, BlogContents, BlogMenu} from "@/app/_models/BlogModels";
 import {loadJsonContents} from "@/libs/JsonFileService";
+import {toTitleCase} from "@/libs/Utils";
 
-export async function getFoldersInPath(targetPath: string): Promise<string[]> {
+const targetPath = './src/json_data/blog';
+
+export async function getFoldersInPath(): Promise<string[]> {
     try {
         // Construct the full path
         const fullPath = path.resolve(targetPath);
@@ -26,9 +29,9 @@ export async function getFoldersInPath(targetPath: string): Promise<string[]> {
     }
 }
 
-export async function getAllUrlInAllFoldersInPath(targetPath: string): Promise<BlogContent[]> {
+export async function getAllUrlInAllFoldersInPath(): Promise<BlogContent[]> {
     try {
-        const foldersInPath = await getFoldersInPath(targetPath);
+        const foldersInPath = await getFoldersInPath();
 
         let blogList: BlogContent[] = []
 
@@ -38,7 +41,7 @@ export async function getAllUrlInAllFoldersInPath(targetPath: string): Promise<B
             const pageContent: BlogContents = await loadJsonContents("blog/" + foldersInPath[i] + "/index")
 
             pageContent.blogList.forEach((element) => {
-                element.url ="/blog/"+ pageContent.currentPage.url + "/" + element.url;
+                element.url = "/blog/" + pageContent.currentPage.url + "/" + element.url;
                 blogList.push(element);
             });
 
@@ -46,6 +49,31 @@ export async function getAllUrlInAllFoldersInPath(targetPath: string): Promise<B
         }
 
         return blogList;
+    } catch (error) {
+        //console.error('Error:', error.message);
+        return []; // Return -1 to indicate an error
+    }
+}
+
+
+export async function getBlogMenu(currentPage:string): Promise<BlogMenu[]> {
+    try {
+        const foldersInPath = await getFoldersInPath();
+
+        let blogMenuList: BlogMenu[] = [];
+
+        foldersInPath.forEach(eachFolder => {
+            const blogMenu = {
+                label: toTitleCase(eachFolder),
+                url: "/blog/" + eachFolder,
+                count: 42,
+                isActive: currentPage == eachFolder
+            };
+
+            blogMenuList.push(blogMenu);
+        });
+
+        return blogMenuList;
     } catch (error) {
         //console.error('Error:', error.message);
         return []; // Return -1 to indicate an error

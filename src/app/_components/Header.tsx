@@ -52,6 +52,7 @@ export default function Header() {
                                     fill="currentColor"
                                 />
                             </svg>
+                            Sudipta K Paik
                         </a>
                     </div>
 

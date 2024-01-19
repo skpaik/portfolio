@@ -3,6 +3,7 @@ import {toDateFormat} from "@/libs/Utils";
 
 import Link from "next/link";
 import {BlogContent} from "@/app/_models/BlogModels";
+import Badge from "@/app/_components/ui/Badge";
 
 type Props = {
     blogList: BlogContent[],
@@ -27,8 +28,7 @@ export default function BlogList({blogList}: Props) {
                             </Link>
                             <div className="mt-4 flex flex-wrap gap-1">
                                 {blogContent.tags?.map((tech, tech_index) => {
-                                    return <span key={tech_index}
-                                                 className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600">{tech}</span>
+                                    return <Badge key={tech_index} title={tech}></Badge>
                                 })}
                             </div>
                         </div>

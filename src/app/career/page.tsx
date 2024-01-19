@@ -1,29 +1,12 @@
 import HeroBanner from "@/app/_components/HeaderBanner";
 import PageContents from "@/app/_components/PageContents";
 import {loadJsonContents} from "@/libs/JsonFileService";
-import LinkBlock from "@/app/_components/ui/LinkBlock";
 
-interface ProjectsContents {
-    pageTitle: string
-    pageSubTitle: string
-    betweenText: string
-    skillsText: string
-    linkText: string
-    workList: [{
-        company: string,
-        company_url: string
-        company_logo_url?: string
-        designation: string
-        description?: string
-        start_date: string
-        end_date: string
-        location: string
-        skills: [string]
-    }]
-}
+import {CareerContents} from "@/app/_models/ContentsModel";
+import CareerCard from "@/app/_components/career/CareerCard";
 
 export default async function Career() {
-    const pageContent: ProjectsContents = await loadJsonContents("career")
+    const pageContent: CareerContents = await loadJsonContents("career")
     return (
         <>
             <HeroBanner title={pageContent.pageTitle} subtitle={pageContent.pageSubTitle}>
@@ -35,8 +18,8 @@ export default async function Career() {
                         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                             {
                                 pageContent.workList.map((item, index) => {
-                                    return <LinkBlock key={index} linkBlock={item}
-                                                      pageContent={pageContent}></LinkBlock>
+                                    return <CareerCard key={index} companyInfo={item}
+                                                      pageContent={pageContent}></CareerCard>
                                 })
                             }
                         </div>

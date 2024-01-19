@@ -2,35 +2,16 @@
 import {toDateFormat} from "@/libs/Utils";
 import Badge from "@/app/_components/ui/Badge";
 import Link from "next/link";
-
-interface BlockContents {
-    pageTitle: string
-    pageSubTitle: string
-    betweenText: string
-    skillsText: string
-    linkText: string
-}
-
-interface LinkBlockContents {
-    company: string,
-    company_url: string
-    company_logo_url?: string
-    designation: string
-    description?: string
-    start_date: string
-    end_date: string
-    location: string
-    skills: [string]
-}
+import {CareerContents, CompanyIWork} from "@/app/_models/ContentsModel";
 
 type Props = {
-    linkBlock: LinkBlockContents,
-    pageContent: BlockContents,
+    companyInfo: CompanyIWork,
+    pageContent: CareerContents,
 }
 
-export default function LinkBlock({linkBlock, pageContent}: Props) {
+export default function CareerCard({companyInfo, pageContent}: Props) {
     return <Link
-        href={"https://" + linkBlock.company_url} target="_blank"
+        href={"https://" + companyInfo.company_url} target="_blank"
         className="group relative block h-64 sm:h-80 lg:h-96">
         <span className="absolute inset-0 border-2 border-dashed border-black"></span>
         <div
@@ -46,12 +27,12 @@ export default function LinkBlock({linkBlock, pageContent}: Props) {
                           strokeWidth="2"
                           d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                <h2 className="mt-4 text-xl font-medium sm:text-2xl">{linkBlock.designation} @ {linkBlock.company}</h2>
+                <h2 className="mt-4 text-xl font-medium sm:text-2xl">{companyInfo.designation} @ {companyInfo.company}</h2>
                 <p className="mt-4 text-sm sm:text-base">
-                    {toDateFormat(linkBlock.start_date)} {pageContent.betweenText} {toDateFormat(linkBlock.end_date)}
+                    {toDateFormat(companyInfo.start_date)} {pageContent.betweenText} {toDateFormat(companyInfo.end_date)}
                 </p>
                 <p className="mt-4 text-sm sm:text-base">
-                    {linkBlock.location}
+                    {companyInfo.location}
                 </p>
             </div>
             <div
@@ -59,16 +40,16 @@ export default function LinkBlock({linkBlock, pageContent}: Props) {
                 <h3 className="mt-4 text-xl font-medium sm:text-2xl">{pageContent.skillsText}</h3>
 
                 <p className="mt-4 text-sm sm:text-base">
-                    {linkBlock.skills?.map((skil, skill_index) => {
+                    {companyInfo.skills?.map((skil, skill_index) => {
                         return <Badge title={skil} key={skill_index}/>
                     })}
                 </p>
 
                 <p className="mt-4 text-sm sm:text-base">
-                    {linkBlock.description}
+                    {companyInfo.description}
                 </p>
 
-                <Link href={"https://www." + linkBlock.company_url} target="_blank">
+                <Link href={"https://www." + companyInfo.company_url} target="_blank">
                     <p className="mt-8 font-bold">{pageContent.linkText}</p>
                 </Link>
             </div>

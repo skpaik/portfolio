@@ -80,15 +80,12 @@ export async function getBlogContentList(currentPage: string): Promise<BlogConte
 
         const jsonFiles = await findAllJsonFiles(folderPath);
 
-        //console.log("jsonFiles>>>" + jsonFiles); //use i instead of 0
 
         let blogContentList: BlogContent[] = [];
 
         for (let i = 0; i < jsonFiles.length; i++) {
-            //console.log("jsonFiles[i]>>>" + jsonFiles[i]); //use i instead of 0
 
             const url = jsonFiles[i].replace(".json", "");
-            //console.log("jsonFiles url>>>" + url); //use i instead of 0
 
             if (url !== "index") {
                 const endUrl="/blog/" + currentPage + "/" + url;
@@ -99,13 +96,10 @@ export async function getBlogContentList(currentPage: string): Promise<BlogConte
                 blogContent.slug = url;
                 blogContent.page = currentPage;
 
-                //console.log(blogContent); //use i instead of 0
-
                 blogContentList.push(blogContent);
             }
         }
 
-        //console.error('blogContentList:', blogContentList);
         return blogContentList;
     } catch (error) {
         //console.error('Error:', error.message);

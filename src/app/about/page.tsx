@@ -1,12 +1,7 @@
 import HeroBanner from "@/app/_components/HeaderBanner";
 import PageContents from "@/app/_components/PageContents";
 import {loadJsonContents} from "@/libs/JsonFileService";
-
-interface AboutContents {
-    intro: string
-    para: [string]
-}
-
+import {AboutContents} from "@/app/_models/ContentsModel";
 export default async function About() {
     const pageContent: AboutContents = await loadJsonContents("about")
 
@@ -16,7 +11,7 @@ export default async function About() {
             </HeroBanner>
             <PageContents classNames="">
                 <ul className="space-y-8">
-                    {pageContent.para.map((para, index) => {
+                    {pageContent.contents.map((para, index) => {
                         return <li key={index}>
                             {para}
                         </li>

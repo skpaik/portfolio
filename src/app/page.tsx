@@ -3,24 +3,11 @@ import PageContents from "@/app/_components/PageContents";
 import {loadJsonContents} from "@/libs/JsonFileService";
 import Image from "next/image";
 import Link from "next/link";
-
-interface HomeContents {
-    devFullName: string
-    pageTitle: string
-    pageSubTitle: string
-    titleDetail: string
-    techStackTitle: string
-    techStacks: [
-        {
-            label: string,
-            tech: string
-        }
-    ]
-    studyInfo: string
-}
+import {HomeContents} from "@/app/_models/ContentsModel";
 
 export default async function Home() {
     const pageContent: HomeContents = await loadJsonContents("home")
+
     return (
         <>
             <HeroBanner title={pageContent.pageTitle}>

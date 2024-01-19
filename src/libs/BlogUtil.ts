@@ -29,19 +29,6 @@ export async function getFoldersInPath(): Promise<string[]> {
     }
 }
 
-function removeDuplicatesByProperty(array: BlogContent[], property: keyof BlogContent): BlogContent[] {
-    const uniqueObjects: { [key: string]: BlogContent } = {};
-
-    for (const obj of array) {
-        const key = obj[property];
-        if (!uniqueObjects[key]) {
-            uniqueObjects[key] = obj;
-        }
-    }
-
-    return Object.values(uniqueObjects);
-}
-
 export async function getAllUrlInAllFoldersInPath(): Promise<BlogContent[]> {
     try {
         const foldersInPath = await getFoldersInPath();

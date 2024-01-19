@@ -10,12 +10,12 @@ type Props = {
 }
 
 export default function BlogList({blogList, currentPage}: Props) {
-    return <div className="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-        <div className="grid grid-cols-1 gap-y-8 lg:items-center lg:gap-x-16">
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+    return <div className="max-w">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 items-center">
+
                 {blogList.map((blogContent: BlogContent, index) => {
                     return <article key={index}
-                        className="hover:animate-background rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s]">
+                        className="hover:animate-background mx-2 my-2 rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s]">
                         <div className="rounded-[10px] bg-white p-4 !pt-20 sm:p-6">
                             <time dateTime="2022-10-10" className="block text-xs text-gray-500">
                                 {toDateFormat(blogContent.dateTime)}
@@ -34,7 +34,7 @@ export default function BlogList({blogList, currentPage}: Props) {
                         </div>
                     </article>
                 })}
-            </div>
+
         </div>
     </div>
 }

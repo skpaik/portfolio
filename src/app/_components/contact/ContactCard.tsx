@@ -62,39 +62,39 @@ export default function ContactCard({pageContent}: Props) {
 
                         <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
                             <div>
-                                <input className="peer sr-only" id="option1" type="radio" tabIndex="-1"
+                                <input className="peer sr-only" id="option1" type="radio"
                                        name="option"/>
 
                                 <label
                                     htmlFor="option1"
                                     className="block w-full rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
-                                    tabIndex="0"
+
                                 >
                                     <span className="text-sm"> Option 1 </span>
                                 </label>
                             </div>
 
                             <div>
-                                <input className="peer sr-only" id="option2" type="radio" tabIndex="-1"
+                                <input className="peer sr-only" id="option2" type="radio"
                                        name="option"/>
 
                                 <label
                                     htmlFor="option2"
                                     className="block w-full rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
-                                    tabIndex="0"
+
                                 >
                                     <span className="text-sm"> Option 2 </span>
                                 </label>
                             </div>
 
                             <div>
-                                <input className="peer sr-only" id="option3" type="radio" tabIndex="-1"
+                                <input className="peer sr-only" id="option3" type="radio"
                                        name="option"/>
 
                                 <label
                                     htmlFor="option3"
                                     className="block w-full rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white"
-                                    tabIndex="0"
+
                                 >
                                     <span className="text-sm"> Option 3 </span>
                                 </label>
@@ -107,7 +107,7 @@ export default function ContactCard({pageContent}: Props) {
                             <textarea
                                 className="w-full rounded-lg border-gray-200 p-3 text-sm"
                                 placeholder="Message"
-                                rows="8"
+
                                 id="message"
                             ></textarea>
                         </div>

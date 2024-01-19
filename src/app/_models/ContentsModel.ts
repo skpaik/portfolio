@@ -1,3 +1,37 @@
+export interface LayoutContent {
+    devFullName: string
+    header: HeaderContent
+    footer: FooterContent
+}
+export interface HeaderContent {
+    topMenuLinks: [
+        {
+            title: string
+            href: string
+            external: boolean
+        }
+    ]
+}
+
+export interface FooterContent {
+    footNote: string
+    footerLinks: [
+        {
+            title: string
+            url: string
+            external: boolean
+            target: string
+        }
+    ]
+    socialLinks: [
+        {
+            title: string
+            url: string
+            external: boolean
+        }
+    ]
+}
+
 export interface HomeContents {
     devFullName: string
     pageTitle: string

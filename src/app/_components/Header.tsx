@@ -4,8 +4,13 @@ import Link from 'next/link'
 import {useEffect, useState} from 'react'
 
 import {usePathname} from 'next/navigation'
+import {LayoutContent} from "@/app/_models/ContentsModel";
 
-export default function Header() {
+type Props = {
+    pageContent: LayoutContent
+}
+
+export default function Header({pageContent}: Props) {
 
     const routerPathname = usePathname()
 
@@ -13,37 +18,11 @@ export default function Header() {
 
     useEffect(() => setShowMenu(false), [routerPathname])
 
-    const menuLinks = [
-        {
-            title: 'Home',
-            href: '/',
-            external: false,
-        }, {
-            title: 'About',
-            href: '/about',
-            external: false,
-        },
-        {
-            title: 'Career',
-            href: '/career',
-            external: false,
-        },
-        {
-            title: 'Projects',
-            href: '/projects',
-            external: false,
-        },
-        {
-            title: 'Blog',
-            href: '/blog',
-            external: false,
-        },
-    ]
     return (
         <header className="sticky inset-x-0 top-0 z-50 border-b border-gray-200 bg-white">
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
-                    <div className="flex-1 md:flex md:items-center md:gap-12">
+                    <div  className="flex-1 md:flex md:items-center md:gap-12">
                         <a className="block text-teal-600" href="/portfolio">
                             <span className="sr-only">Home</span>
                             <svg className="h-8" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,14 +31,15 @@ export default function Header() {
                                     fill="currentColor"
                                 />
                             </svg>
-                            Sudipta K Paik
+                            {pageContent.devFullName}
                         </a>
+                        <a id="ToHeader"></a>
                     </div>
 
                     <div className="md:flex md:items-center md:gap-12">
                         <nav aria-label="Global" className="hidden md:block">
                             <ul className="flex items-center gap-6 text-sm">
-                                {menuLinks.map((menuLink, index, {length}) => {
+                                {pageContent.header.topMenuLinks.map((menuLink, index, {length}) => {
                                     const isLast = index === length - 1
 
                                     return (

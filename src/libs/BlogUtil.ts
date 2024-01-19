@@ -56,7 +56,7 @@ export async function getAllUrlInAllFoldersInPath(): Promise<BlogContent[]> {
 }
 
 
-export async function getBlogMenu(currentPage:string): Promise<BlogMenu[]> {
+export async function getBlogMenu(currentPage: string): Promise<BlogMenu[]> {
     try {
         const foldersInPath = await getFoldersInPath();
 
@@ -77,5 +77,59 @@ export async function getBlogMenu(currentPage:string): Promise<BlogMenu[]> {
     } catch (error) {
         //console.error('Error:', error.message);
         return []; // Return -1 to indicate an error
+    }
+}
+
+export async function getBlogContentList(currentPage: string): Promise<BlogContent[]> {
+    try {
+        const folderPath = targetPath + "/" + currentPage + "/"
+
+        const jsonFiles = await findAllJsonFiles(folderPath);
+
+        console.log("jsonFiles>>>" + jsonFiles); //use i instead of 0
+
+        let blogContentList: BlogContent[] = [];
+
+        for (let i = 0; i < jsonFiles.length; i++) {
+            console.log("jsonFiles[i]>>>" + jsonFiles[i]); //use i instead of 0
+
+            const url = jsonFiles[i].replace(".json", "");
+            console.log("jsonFiles url>>>" + url); //use i instead of 0
+
+            if (url !== "index") {
+                const blogContent: BlogContent = await loadJsonContents("blog/"+currentPage + "/" + url)
+                blogContent.url = url;
+
+                console.log(blogContent); //use i instead of 0
+
+                blogContentList.push(blogContent);
+            }
+        }
+
+        console.error('blogContentList:', blogContentList);
+        return blogContentList;
+    } catch (error) {
+        //console.error('Error:', error.message);
+        return []; // Return -1 to indicate an error
+    }
+}
+
+async function findAllJsonFiles(folderPath: string): Promise<string[]> {
+    console.error('folderPath:', folderPath);
+    try {
+
+        const fullPath = path.resolve(folderPath);
+        const filesAndFolders = fs.readdirSync(fullPath);
+
+        // Filter out only the JSON files
+        const jsonFiles = filesAndFolders.filter((item) =>
+            fs.statSync(path.join(folderPath, item)).isFile() && item.toLowerCase().endsWith('.json')
+        );
+
+        // Return the list of JSON files
+        return jsonFiles;
+    } catch (error) {
+        // console.error('Error:', error.message);
+        return []; // Return an empty array to indicate an error or no JSON files found
     }
 }

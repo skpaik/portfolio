@@ -8,7 +8,8 @@ export interface BlogContents {
 }
 
 export interface BlogContent {
-    label: string,
+    title: string,
+    intro: string,
     url: string
     page: string
     slug: string

@@ -9,7 +9,7 @@ type Props = {
     currentPage: string,
 }
 
-export default function BlogList({blogList, currentPage}: Props) {
+export default function BlogList({blogList}: Props) {
     return <div className="max-w">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 items-center">
 
@@ -22,7 +22,7 @@ export default function BlogList({blogList, currentPage}: Props) {
                             </time>
                             <Link href={blogContent.url}>
                                 <h3 className="mt-0.5 text-lg font-medium text-gray-900">
-                                    {blogContent.label}
+                                    {blogContent.title}
                                 </h3>
                             </Link>
                             <div className="mt-4 flex flex-wrap gap-1">

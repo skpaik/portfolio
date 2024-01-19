@@ -1,12 +1,11 @@
 {
-  "label": "Blog title 42",
-  "dateTime": "2023-01-12",
+  "title": "Title 4",
+  "intro": "Intro",
   "contents": [
-    "Line 1",
-    "Line 2"
+
   ],
   "tags": [
-    "Flask",
-    "VueJs"
-  ]
+    "webdev","productivity","opensource","programming"
+  ],
+  "dateTime": "2024-01-19"
 }

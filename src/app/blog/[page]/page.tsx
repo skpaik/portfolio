@@ -1,9 +1,9 @@
-import {getBlogMenu, getFoldersInPath} from "@/libs/BlogUtil";
+import {getBlogContentList, getBlogMenu, getFoldersInPath} from "@/libs/BlogUtil";
 
 import HeroBanner from "@/app/_components/HeaderBanner";
 import {loadJsonContents} from "@/libs/JsonFileService";
 
-import {BlogContents, BlogMenu} from '@/app/_models/BlogModels';
+import {BlogContent, BlogContents, BlogMenu} from '@/app/_models/BlogModels';
 import PageContents from "@/app/_components/PageContents";
 
 import BlogList from "@/app/_components/blog/BlogList";
@@ -21,6 +21,7 @@ export async function generateStaticParams() {
 export default async function BlogPage({params: {page, totalPage}}: { params: { page: string, totalPage: string } }) {
     const pageContent: BlogContents = await loadJsonContents("blog/" + page + "/index")
     const blogMenuList: BlogMenu[] = await getBlogMenu(page);
+    const blogContentList: BlogContent[] = await getBlogContentList(page);
     return (
         <>
             <HeroBanner title={pageContent.pageTitle} subtitle={pageContent.pageSubTitle}>
@@ -31,7 +32,7 @@ export default async function BlogPage({params: {page, totalPage}}: { params: { 
                         <SideBar sideBarList={blogMenuList}></SideBar>
                     </div>
                     <div className="rounded-lg lg:col-span-3">
-                        <BlogList blogList={pageContent.blogList} currentPage="page1"></BlogList>
+                        <BlogList blogList={blogContentList} currentPage="page1"></BlogList>
                     </div>
                 </div>
             </PageContents>

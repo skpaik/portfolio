@@ -1,4 +1,3 @@
-import {loadJsonContents} from "@/libs/JsonFileService";
 import Link from "next/link";
 import {LayoutContent} from "@/app/_models/ContentsModel";
 
@@ -41,7 +40,7 @@ export default async function Footer({pageContent}: Props) {
                             {pageContent.footer.footerLinks.map((footerLink, index) => {
                                 return <li key={index}>
                                     <Link href={footerLink.url} target={footerLink.target}
-                                       className="text-gray-700 transition hover:text-gray-700/75">{footerLink.title}</Link>
+                                          className="text-gray-700 transition hover:text-gray-700/75">{footerLink.title}</Link>
                                 </li>
                             })}
                         </ul>

@@ -19,7 +19,7 @@ export default async function Career() {
                             {
                                 pageContent.workList.map((item, index) => {
                                     return <CareerCard key={index} companyInfo={item}
-                                                      pageContent={pageContent}></CareerCard>
+                                                       pageContent={pageContent}></CareerCard>
                                 })
                             }
                         </div>

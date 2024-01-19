@@ -88,7 +88,7 @@ export async function getBlogContentList(currentPage: string): Promise<BlogConte
             const url = jsonFiles[i].replace(".json", "");
 
             if (url !== "index") {
-                const endUrl="/blog/" + currentPage + "/" + url;
+                const endUrl = "/blog/" + currentPage + "/" + url;
 
                 const blogContent: BlogContent = await loadJsonContents(endUrl)
 

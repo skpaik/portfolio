@@ -2,10 +2,12 @@
   "title": "Title 2",
   "intro": "Intro",
   "contents": [
-
   ],
   "tags": [
-    "webdev","productivity","opensource","programming"
+    "webdev",
+    "productivity",
+    "opensource",
+    "programming"
   ],
   "dateTime": "2024-01-19"
 }

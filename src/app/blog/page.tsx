@@ -11,8 +11,8 @@ import SideBar from "@/app/_components/blog/SideBar";
 
 
 export default async function Blog() {
-    const page="aws"
-    const pageContent: BlogContents = await loadJsonContents("blog/"+page+"/index")
+    const page = "aws"
+    const pageContent: BlogContents = await loadJsonContents("blog/" + page + "/index")
     const blogMenuList: BlogMenu[] = await getBlogMenu(page);
     const blogContentList: BlogContent[] = await getBlogContentList(page);
 

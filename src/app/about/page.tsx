@@ -2,6 +2,7 @@ import HeroBanner from "@/app/_components/HeaderBanner";
 import PageContents from "@/app/_components/PageContents";
 import {loadJsonContents} from "@/libs/JsonFileService";
 import {AboutContent} from "@/app/_models/ContentsModel";
+
 export default async function About() {
     const pageContent: AboutContent = await loadJsonContents("about")
 

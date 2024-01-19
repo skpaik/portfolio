@@ -31,7 +31,9 @@ const inter = Inter({
     variable: '--font-inter',
 })
 
-export default async function RootLayout({children,}: { children: React.ReactNode }) {
+export default async function RootLayout({children,}: {
+    children: React.ReactNode
+}) {
     const pageContent: LayoutContent = await loadJsonContents("layout")
 
     return (

@@ -98,21 +98,25 @@ export interface TermsContent extends BaseStaticContent {
     intro: string
     contents: [string]
 }
+
 export interface PrivacyContent extends BaseStaticContent {
     intro: string
     contents: [string]
 }
+
 export interface ContactPhoneNumber {
     phone: string
     countryCode?: string
     type: string
 }
+
 export interface ContactAddress {
     house: string
     road: string
     country?: string
     type: string
 }
+
 export interface ContactContent extends BaseStaticContent {
     intro: string
     contents: [string]

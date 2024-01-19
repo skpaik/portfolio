@@ -1,10 +1,10 @@
-
 export async function toDateFormat(inputDate: string) {
     const date = new Date(inputDate);
 
     return date.toDateString()
 }
-export  function toTitleCase(inputString: string): string {
+
+export function toTitleCase(inputString: string): string {
     // Split the string into words
     const words = inputString.split(' ');
 

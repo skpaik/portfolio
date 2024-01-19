@@ -35,7 +35,7 @@
         "VueJs"
       ],
       "description": "Travel website",
-      "workType": "Official Project" 
+      "workType": "Official Project"
     },
     {
       "label": "Bedroomvillas.com.au",
@@ -45,7 +45,7 @@
         "VueJs"
       ],
       "description": "Travel website",
-      "workType": "Official Project" 
+      "workType": "Official Project"
     },
     {
       "label": "Execstays.com",
@@ -55,7 +55,7 @@
         "VueJs"
       ],
       "description": "Travel website",
-      "workType": "Official Project" 
+      "workType": "Official Project"
     },
     {
       "label": "Meilleureslocations.fr",
@@ -65,7 +65,7 @@
         "VueJs"
       ],
       "description": "Travel website",
-      "workType": "Official Project" 
+      "workType": "Official Project"
     },
     {
       "label": "Rentalhomes24.de",
@@ -75,7 +75,7 @@
         "VueJs"
       ],
       "description": "Travel website",
-      "workType": "Official Project" 
+      "workType": "Official Project"
     },
     {
       "label": "Stays.io",
@@ -85,7 +85,7 @@
         "VueJs"
       ],
       "description": "Travel website",
-      "workType": "Official Project" 
+      "workType": "Official Project"
     },
     {
       "label": "Summerrentals.io",
@@ -95,7 +95,7 @@
         "VueJs"
       ],
       "description": "Travel website",
-      "workType": "Official Project" 
+      "workType": "Official Project"
     },
     {
       "label": "Vacationhome.rent",
@@ -105,7 +105,7 @@
         "VueJs"
       ],
       "description": "Travel website",
-      "workType": "Official Project" 
+      "workType": "Official Project"
     },
     {
       "label": "bedroomvillas.com",
@@ -115,7 +115,7 @@
         "VueJs"
       ],
       "description": "Travel website",
-      "workType": "Official Project" 
+      "workType": "Official Project"
     },
     {
       "label": "rentalhomes.com",
@@ -125,7 +125,7 @@
         "VueJs"
       ],
       "description": "Travel website",
-      "workType": "Official Project" 
+      "workType": "Official Project"
     },
     {
       "label": "qeasy.io",
@@ -135,7 +135,7 @@
         "PostgresSQL"
       ],
       "description": "Queue management web application",
-      "workType": "Official Project" 
+      "workType": "Official Project"
     }
   ]
 }

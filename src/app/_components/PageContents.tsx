@@ -1,5 +1,5 @@
 type Props = {
-    children: string | JSX.Element | JSX.Element[]| undefined
+    children: string | JSX.Element | JSX.Element[] | undefined
     classNames: string
 }
 export default function PageContents({children, classNames}: Props) {

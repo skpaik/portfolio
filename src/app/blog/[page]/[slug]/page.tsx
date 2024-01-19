@@ -24,7 +24,9 @@ type Props = {
     slug: string
 }
 
-export default async function BlogSlug({params}: { params: Props }) {
+export default async function BlogSlug({params}: {
+    params: Props
+}) {
     const {page, slug} = params
     const blogMenuList: BlogMenu[] = await getBlogMenu(page);
     const blogContent: BlogContent = await loadJsonContents("/blog/" + page + "/" + slug)

@@ -1,7 +1,8 @@
 import HeroBanner from "@/app/_components/HeaderBanner";
 import PageContents from "@/app/_components/PageContents";
 import {loadJsonContents} from "@/libs/JsonFileService";
-import { TermsContent} from "@/app/_models/ContentsModel";
+import {TermsContent} from "@/app/_models/ContentsModel";
+
 export default async function Terms() {
     const pageContent: TermsContent = await loadJsonContents("terms")
 

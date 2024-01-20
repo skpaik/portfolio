@@ -7,23 +7,9 @@ import Head from 'next/head'
 import {loadJsonContents} from "@/libs/JsonFileService";
 import {LayoutContent} from "@/app/_models/ContentsModel";
 
-export const metadata = {
-    metadataBase: new URL('https://hyperui.dev'),
-    title: 'Sudipta Kumar Paik',
-    description: 'Free Tailwind CSS components that can be used in your next project.',
-    openGraph: {
-        title: 'Free Open Source Tailwind CSS Components | HyperUI',
-        description: 'Free Tailwind CSS components that can be used in your next project.',
-        url: 'https://www.hyperui.dev/',
-        siteName: 'HyperUI',
-        type: 'website',
-        images: ['https://www.hyperui.dev/og.jpg'],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Free Open Source Tailwind CSS Components | HyperUI',
-        description: 'Free Tailwind CSS components that can be used in your next project.',
-    },
+export async function generateMetadata() {
+    const pageContent: LayoutContent = await loadJsonContents("layout")
+    return pageContent.metadata
 }
 
 const inter = Inter({

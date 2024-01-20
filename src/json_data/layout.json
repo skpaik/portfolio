@@ -1,5 +1,25 @@
 {
   "devFullName": "Sudipta Kumar Paik",
+  "metadata": {
+    "metadataBase": "https://github.com/skpaik/portfolio",
+    "title": "Sudipta Kumar Paik",
+    "description": "Portfolio template for next.js project to generate static contents from json.",
+    "openGraph": {
+      "title": "Free Open Source NextJs Portfolio project.",
+      "description": "Generate and deploy using GitHub Actions.",
+      "url": "https://github.com/skpaik/portfolio",
+      "siteName": "skpaik.dev",
+      "type": "website",
+      "images": [
+        "https://www.skpaik.dev/static/og.jpg"
+      ]
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Free Open Source NextJs Portfolio project.",
+      "description": "Generate and deploy using GitHub Actions."
+    }
+  },
   "header": {
     "topMenuLinks": [
       {

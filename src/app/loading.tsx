@@ -1,13 +1,9 @@
 export default function Loading() {
-    return <div>
-        <span id="ProgressLabel" className="sr-only">Loading</span>
-        <span role="progressbar"
-              aria-labelledby="ProgressLabel"
-              aria-valuenow="75"
-              className="block rounded-full bg-gray-200">
-                    <span
-                        className="block h-3 rounded-full bg-[repeating-linear-gradient(45deg,_var(--tw-gradient-from)_0,_var(--tw-gradient-from)_20px,_var(--tw-gradient-to)_20px,_var(--tw-gradient-to)_40px)] from-indigo-400 to-indigo-500"
-                    ></span>
-                </span>
+    return <div className="flex items-center justify-center h-screen">
+        <div className="relative">
+            <div className="h-24 w-24 rounded-full border-t-8 border-b-8 border-gray-200"></div>
+            <div className="absolute top-0 left-0 h-24 w-24 rounded-full border-t-8 border-b-8 border-blue-500 animate-spin">
+            </div>
+        </div>
     </div>
 }

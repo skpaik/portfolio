@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 git add .
-git commit -m "404 and Loading updated"
+git commit -m "Meta Data and Loading Contents updated"
 git push origin main

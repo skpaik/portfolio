@@ -1,3 +1,6 @@
+import {Metadata} from 'next'
+
+
 export interface BaseStaticContent {
     pageTitle: string
     pageSubTitle: string
@@ -6,9 +9,11 @@ export interface BaseStaticContent {
 
 export interface LayoutContent {
     devFullName: string
+    metadata: Metadata
     header: HeaderContent
     footer: FooterContent
 }
+
 
 export interface HeaderContent {
     topMenuLinks: [
@@ -19,6 +24,7 @@ export interface HeaderContent {
         }
     ]
 }
+
 
 export interface FooterContent {
     footNote: string
@@ -39,6 +45,7 @@ export interface FooterContent {
     ]
 }
 
+
 export interface HomeContent extends BaseStaticContent {
     devFullName: string
     titleDetail: string
@@ -52,6 +59,7 @@ export interface HomeContent extends BaseStaticContent {
     studyInfo: string
 }
 
+
 export interface CareerContent extends BaseStaticContent {
 
     betweenText: string
@@ -59,6 +67,7 @@ export interface CareerContent extends BaseStaticContent {
     linkText: string
     workList: CompanyIWork []
 }
+
 
 export interface ProjectsContent extends BaseStaticContent {
     techStackTitle: string
@@ -75,6 +84,7 @@ export interface ProjectIWork {
     techStack: [string]
     workType: string
 }
+
 
 export interface CompanyIWork {
     company: string,
@@ -94,21 +104,25 @@ export interface AboutContent extends BaseStaticContent {
     contents: [string]
 }
 
+
 export interface TermsContent extends BaseStaticContent {
     intro: string
     contents: [string]
 }
+
 
 export interface PrivacyContent extends BaseStaticContent {
     intro: string
     contents: [string]
 }
 
+
 export interface ContactPhoneNumber {
     phone: string
     countryCode?: string
     type: string
 }
+
 
 export interface ContactAddress {
     house: string
@@ -117,9 +131,13 @@ export interface ContactAddress {
     type: string
 }
 
+
 export interface ContactContent extends BaseStaticContent {
     intro: string
     contents: [string]
     phoneNumberList: ContactPhoneNumber[]
     addressList: ContactAddress[]
 }
+
+
+

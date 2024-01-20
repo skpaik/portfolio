@@ -44,7 +44,7 @@ export default async function Home() {
                     width={100}
                     height={100}
                     alt="Violin"
-                    src="https://avatars.githubusercontent.com/u/620762?s=400&u=353021b6974bb9baf267dc10ed116016d77ca618"
+                    src={pageContent.devAvatarURL}
                     className="h-full w-full object-cover sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%_-_4rem)] md:rounded-ss-[60px]"
                 />
             </PageContents>

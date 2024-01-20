@@ -1,5 +1,4 @@
 {
-  "devFullName": "Sudipta Kumar Paik",
   "metadata": {
     "metadataBase": "https://github.com/skpaik/portfolio",
     "title": "Sudipta Kumar Paik",
@@ -74,33 +73,6 @@
         "title": "Social",
         "url": "/social",
         "target": "_self",
-        "external": false
-      }
-    ],
-    "socialLinks": [
-      {
-        "title": "Home",
-        "url": "/",
-        "external": false
-      },
-      {
-        "title": "About",
-        "url": "/about",
-        "external": false
-      },
-      {
-        "title": "Career",
-        "url": "/career",
-        "external": false
-      },
-      {
-        "title": "Projects",
-        "url": "/projects",
-        "external": false
-      },
-      {
-        "title": "Blog",
-        "url": "/blog",
         "external": false
       }
     ]

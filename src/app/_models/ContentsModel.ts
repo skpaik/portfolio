@@ -1,7 +1,13 @@
 import {Metadata} from 'next'
 
 
-export interface BaseStaticContent {
+export interface GlobalContent {
+    devFullName: string
+    devAvatarURL: string
+}
+
+
+export interface BaseStaticContent extends GlobalContent {
     pageTitle: string
     pageSubTitle: string
     intro: string
@@ -50,6 +56,7 @@ export interface FooterContent {
 
 export interface HomeContent extends BaseStaticContent {
     devFullName: string
+    devAvatarURL: string
     titleDetail: string
     techStackTitle: string
     techStacks: [

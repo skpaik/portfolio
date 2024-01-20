@@ -3,6 +3,7 @@ import PageContents from "@/app/_components/PageContents";
 import {loadJsonContents} from "@/libs/JsonFileService";
 import {SocialContent} from "@/app/_models/ContentsModel";
 import SocialCard from "@/app/_components/social/SocialCard";
+import Image from "next/image";
 
 export default async function About() {
     const pageContent: SocialContent = await loadJsonContents("social")
@@ -14,9 +15,11 @@ export default async function About() {
             <PageContents classNames="">
                 <article className="rounded-xl border border-gray-700  p-4">
                     <div className="flex items-center gap-4">
-                        <img
+                        <Image
                             alt="Developer"
-                            src="https://images.unsplash.com/photo-1614644147724-2d4785d69962?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80"
+                            height={100}
+                            width={100}
+                            src={pageContent.devAvatarURL}
                             className="h-16 w-16 rounded-full object-cover"
                         />
 

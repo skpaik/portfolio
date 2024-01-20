@@ -1,0 +1,125 @@
+{
+  "devFullName": "Sudipta Kumar Paik",
+  "pageTitle": "Social",
+  "pageSubTitle": "All my social media",
+  "intro": "You can visit each URL by clicking on it",
+  "itemHeaders": {
+    "title": "Title",
+    "url": "URL",
+    "baseUrl": "Base URL",
+    "username": "Username",
+    "startDate": "Start date",
+    "description": "Description",
+    "stats": {
+      "subscriber": "Subscriber",
+      "follower": "Follower",
+      "following": "Following"
+    }
+  },
+  "items": [
+    {
+      "title": "LinkedIn",
+      "url": "https://www.linkedIn.com/in/skpaik",
+      "baseUrl": "https://www.linkedIn.com",
+      "username": "skpaik",
+      "startDate": "2004-02-07",
+      "description": "",
+      "stats": {
+        "subscriber": 2,
+        "follower": 1,
+        "following": 0
+      }
+    },
+    {
+      "title": "Resume",
+      "url": "https://skpaik.github.io/portfolio/resume",
+      "baseUrl": "https://www.github.io",
+      "username": "skpaik",
+      "startDate": "2004-02-07",
+      "description": "",
+      "stats": {
+        "subscriber": 2,
+        "follower": 1,
+        "following": 0
+      }
+    },
+    {
+      "title": "Profile",
+      "url": "https://skpaik.github.io",
+      "baseUrl": "https://www.github.com",
+      "username": "skpaik",
+      "startDate": "2004-02-07",
+      "description": "",
+      "stats": {
+        "subscriber": 2,
+        "follower": 1,
+        "following": 0
+      }
+    },
+    {
+      "title": "Portfolio",
+      "url": "https://skpaik.github.io/portfolio",
+      "baseUrl": "https://www.github.io",
+      "username": "skpaik",
+      "startDate": "2004-02-07",
+      "description": "",
+      "stats": {
+        "subscriber": 2,
+        "follower": 1,
+        "following": 0
+      }
+    },
+    {
+      "title": "Facebook",
+      "url": "https://www.facebook.com/skpaik",
+      "baseUrl": "https://www.facebook.com",
+      "username": "skpaik",
+      "startDate": "2004-02-07",
+      "description": "",
+      "stats": {
+        "subscriber": 2,
+        "follower": 1,
+        "following": 0
+      }
+    },
+    {
+      "title": "Twitter",
+      "url": "https://www.twitter.com/skpaik",
+      "baseUrl": "https://www.twitter.com",
+      "username": "skpaik",
+      "startDate": "2005-02-07",
+      "description": "",
+      "stats": {
+        "subscriber": 2,
+        "follower": 1,
+        "following": 0
+      }
+    },
+    {
+      "title": "Instagram",
+      "url": "https://www.instagram.com/skpaik",
+      "baseUrl": "https://www.instagram.com",
+      "username": "skpaik",
+      "startDate": "2004-02-07",
+      "description": "",
+      "stats": {
+        "subscriber": 2,
+        "follower": 1,
+        "following": 0
+      }
+    },
+    {
+      "title": "Youtube",
+      "url": "https://www.youtube.com/skpaik",
+      "baseUrl": "https://www.youtube.com",
+      "username": "skpaik",
+      "startDate": "2004-02-07",
+      "description": "",
+      "stats": {
+        "subscriber": 2,
+        "follower": 1,
+        "following": 0
+      }
+    }
+  ]
+}

@@ -4,6 +4,8 @@ import {Metadata} from 'next'
 export interface BaseStaticContent {
     pageTitle: string
     pageSubTitle: string
+    intro: string
+    contents: [string]
 }
 
 
@@ -100,20 +102,17 @@ export interface CompanyIWork {
 
 
 export interface AboutContent extends BaseStaticContent {
-    intro: string
-    contents: [string]
+
 }
 
 
 export interface TermsContent extends BaseStaticContent {
-    intro: string
-    contents: [string]
+
 }
 
 
 export interface PrivacyContent extends BaseStaticContent {
-    intro: string
-    contents: [string]
+
 }
 
 
@@ -133,11 +132,26 @@ export interface ContactAddress {
 
 
 export interface ContactContent extends BaseStaticContent {
-    intro: string
-    contents: [string]
     phoneNumberList: ContactPhoneNumber[]
     addressList: ContactAddress[]
 }
 
+export interface SocialContentItem {
+    title: string
+    url: string
+    baseUrl?: string
+    username?: string
+    startDate: string
+    description?: string
+    stats: {
+        subscriber?: string
+        follower?: string
+        following?: string
+    }
+}
 
-
+export interface SocialContent extends BaseStaticContent {
+    devFullName: string
+    items: SocialContentItem[]
+    itemHeaders: SocialContentItem
+}

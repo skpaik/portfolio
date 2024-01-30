@@ -14,12 +14,7 @@
       "start_date": "2023-05-02",
       "end_date": "2023-09-30",
       "location": "Remote",
-      "skills": [
-        "Magnolia CMS",
-        "TypeScript",
-        "Terraform",
-        "OKTA"
-      ]
+      "skills": ["Magnolia CMS", "TypeScript", "Terraform", "OKTA"]
     },
     {
       "company": "Traaal Tourism",
@@ -30,13 +25,7 @@
       "start_date": "2021-06-10",
       "end_date": "2022-04-30",
       "location": "Remote",
-      "skills": [
-        "NodeJs",
-        "JavaScript",
-        "ExpressJs",
-        "MongoDB",
-        "AWS EC2"
-      ]
+      "skills": ["NodeJs", "JavaScript", "ExpressJs", "MongoDB", "AWS EC2"]
     },
     {
       "company": "W3 Engineers Ltd",

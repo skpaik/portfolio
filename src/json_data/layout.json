@@ -9,9 +9,7 @@
       "url": "https://github.com/skpaik/portfolio",
       "siteName": "skpaik.dev",
       "type": "website",
-      "images": [
-        "https://www.skpaik.dev/static/og.jpg"
-      ]
+      "images": ["https://www.skpaik.dev/static/og.jpg"]
     },
     "twitter": {
       "card": "summary_large_image",
@@ -51,17 +49,12 @@
   "footer": {
     "footNote": "Each person you meet is an aspect of yourself, clamoring for love. – Eric Micha’el Leventhal",
     "footerLinks": [
+
       {
-        "title": "Terms & Conditions",
-        "url": "/terms",
-        "target": "_self",
-        "external": false
-      },
-      {
-        "title": "Privacy Policy",
-        "url": "/privacy",
-        "target": "_self",
-        "external": false
+        "title": "Resume",
+        "url": "https://skpaik.github.io",
+        "target": "_blank",
+        "external": true
       },
       {
         "title": "Contact",
@@ -72,6 +65,18 @@
       {
         "title": "Social",
         "url": "/social",
+        "target": "_self",
+        "external": false
+      },
+      {
+        "title": "Terms",
+        "url": "/terms",
+        "target": "_self",
+        "external": false
+      },
+      {
+        "title": "Privacy",
+        "url": "/privacy",
         "target": "_self",
         "external": false
       }

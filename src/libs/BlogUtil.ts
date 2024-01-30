@@ -1,8 +1,9 @@
 import fs from 'fs';
 import path from 'path';
-import {BlogContent, BlogMenu} from "@/app/_models/BlogModels";
-import {loadJsonContents} from "@/libs/JsonFileService";
+import {BlogContent, BlogContentMd, BlogMenu} from "@/app/_models/BlogModels";
+import {loadContents, loadJsonContents} from "@/libs/JsonFileService";
 import {toTitleCase} from "@/libs/Utils";
+import {getBlogContentListMD, getBlogContentMd} from "@/libs/MarkDownFileService";
 
 const targetPath = './src/json_data/blog';
 
@@ -34,7 +35,6 @@ export async function getAllUrlInAllFoldersInPath(): Promise<BlogContent[]> {
         const foldersInPath = await getFoldersInPath();
 
         let blogList: BlogContent[] = []
-
         for (let i = 0; i < foldersInPath.length; i++) {
             const blogContentList: BlogContent[] = await getBlogContentList(foldersInPath[i]);
 
@@ -49,8 +49,30 @@ export async function getAllUrlInAllFoldersInPath(): Promise<BlogContent[]> {
     }
 }
 
+export async function getAllUrlInAllFoldersInPathMd(): Promise<BlogContentMd[]> {
+    try {
+        const foldersInPath = await getFoldersInPath();
 
-export async function getBlogMenu(currentPage: string): Promise<BlogMenu[]> {
+
+        let blogListMd: BlogContentMd[] = []
+
+        for (let i = 0; i < foldersInPath.length; i++) {
+            const blogContentListMd: BlogContentMd[] = await getBlogContentListMD(foldersInPath[i]);
+
+            blogListMd.push(...blogContentListMd);
+        }
+
+        //const uniqueBlogContents = removeDuplicatesByProperty(blogList, 'url');
+
+        return blogListMd;
+    } catch (error) {
+        //console.error('Error:', error.message);
+        return []; // Return -1 to indicate an error
+    }
+}
+
+
+export async function getBlogMenu(currentCategory: string): Promise<BlogMenu[]> {
     try {
         const foldersInPath = await getFoldersInPath();
 
@@ -61,7 +83,7 @@ export async function getBlogMenu(currentPage: string): Promise<BlogMenu[]> {
                 label: toTitleCase(eachFolder),
                 url: "/blog/" + eachFolder,
                 count: 42,
-                isActive: currentPage == eachFolder
+                isActive: currentCategory == eachFolder
             };
 
             blogMenuList.push(blogMenu);
@@ -107,7 +129,7 @@ export async function getBlogContentList(currentPage: string): Promise<BlogConte
     }
 }
 
-async function findAllJsonFiles(folderPath: string): Promise<string[]> {
+export async function findAllJsonFiles(folderPath: string): Promise<string[]> {
     //console.error('folderPath:', folderPath);
     try {
 
@@ -126,3 +148,16 @@ async function findAllJsonFiles(folderPath: string): Promise<string[]> {
         return []; // Return an empty array to indicate an error or no JSON files found
     }
 }
+
+export async function loadBlogContent(page: string, slug: string) {
+    const globalContents = await loadContents("global");
+
+    const fileContents = getBlogContentMd(page, slug);
+
+    const obj1 = JSON.parse(globalContents);
+    // const obj2 = JSON.parse(fileContents);
+
+    return fileContents;
+    //return {...obj1, ...fileContents};
+}
+

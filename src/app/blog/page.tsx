@@ -9,7 +9,7 @@ import PageContents from "@/app/_components/PageContents";
 import BlogList from "@/app/_components/blog/BlogList";
 import BlogListMd from "@/app/_components/blog/BlogListMD";
 import SideBar from "@/app/_components/blog/SideBar";
-import {getBlogContentListMD, getSortedPostsData} from "@/libs/MarkDownFileService";
+import {getBlogContentListMD} from "@/libs/MarkDownFileService";
 
 
 export default async function Blog() {

@@ -30,25 +30,6 @@ export async function getFoldersInPath(): Promise<string[]> {
     }
 }
 
-export async function getAllUrlInAllFoldersInPath(): Promise<BlogContent[]> {
-    try {
-        const foldersInPath = await getFoldersInPath();
-
-        let blogList: BlogContent[] = []
-        for (let i = 0; i < foldersInPath.length; i++) {
-            const blogContentList: BlogContent[] = await getBlogContentList(foldersInPath[i]);
-
-            blogList.push(...blogContentList);
-        }
-
-        //const uniqueBlogContents = removeDuplicatesByProperty(blogList, 'url');
-        return blogList;
-    } catch (error) {
-        //console.error('Error:', error.message);
-        return []; // Return -1 to indicate an error
-    }
-}
-
 export async function getAllUrlInAllFoldersInPathMd(): Promise<BlogContentMd[]> {
     try {
         const foldersInPath = await getFoldersInPath();

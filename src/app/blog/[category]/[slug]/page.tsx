@@ -1,7 +1,6 @@
 // Generate segments for both [category] and [product]
 import HeroBanner from "@/app/_components/HeaderBanner";
 import {
-    getAllUrlInAllFoldersInPath,
     getAllUrlInAllFoldersInPathMd,
     getBlogMenu,
     loadBlogContent
@@ -13,14 +12,12 @@ import BlogDetail from "@/app/_components/blog/BlogDetail";
 
 export async function generateStaticParams() {
     const blogContentsMd = await getAllUrlInAllFoldersInPathMd();
+
     const urlsMd: Props[] = blogContentsMd.map((blogContent: BlogContentMd) => ({
-        //url: blogContent.url,
         category: blogContent.category,
         slug: blogContent.slug
     }));
 
-    console.log("generateStaticParams() slug details urlsMd")
-    console.log(urlsMd);
     return urlsMd;
 }
 

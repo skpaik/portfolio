@@ -1,4 +1,5 @@
 import {promises as fs} from 'fs';
+
 export async function loadContents(file: string) {
     return await fs.readFile(process.cwd() + `/src/json_data/${file}.json`, 'utf8');
 }

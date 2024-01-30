@@ -14,8 +14,19 @@ export interface BlogContent {
     page: string
     slug: string
     dateTime: string
-    contents: [string]
+    contents?: [string]
     tags: [string]
+}
+
+export interface BlogContentMd {
+    title?: string,
+    intro?: string,
+    url?: string
+    category: string
+    slug: string
+    dateTime?: string
+    contents?: string
+    tags?: [string]
 }
 
 export interface BlogMenu {

@@ -9,9 +9,7 @@
       "url": "https://github.com/skpaik/portfolio",
       "siteName": "skpaik.dev",
       "type": "website",
-      "images": [
-        "https://www.skpaik.dev/static/og.jpg"
-      ]
+      "images": ["https://www.skpaik.dev/static/og.jpg"]
     },
     "twitter": {
       "card": "summary_large_image",

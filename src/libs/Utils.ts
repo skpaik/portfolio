@@ -1,29 +1,29 @@
 export async function toDateFormat(inputDate: string) {
-    const date = new Date(inputDate);
+  const date = new Date(inputDate);
 
-    return date.toDateString()
+  return date.toDateString();
 }
 
 export function toTitleCase(inputString: string): string {
-    // Split the string into words
-    const words = inputString.split(' ');
+  // Split the string into words
+  const words = inputString.split(" ");
 
-    // Capitalize the first letter of each word
-    const titleCaseWords = words.map((word) => {
-        if (word.length > 0) {
-            return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-        } else {
-            return word;
-        }
-    });
+  // Capitalize the first letter of each word
+  const titleCaseWords = words.map((word) => {
+    if (word.length > 0) {
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    } else {
+      return word;
+    }
+  });
 
-    // Join the words back into a string
-    const titleCaseString = titleCaseWords.join(' ');
+  // Join the words back into a string
+  const titleCaseString = titleCaseWords.join(" ");
 
-    return titleCaseString;
+  return titleCaseString;
 }
 
 export function log_con(key: string, value: string) {
-    console.log("Key: " + key)
-    console.log("Value: " + value)
+  console.log("Key: " + key);
+  console.log("Value: " + value);
 }

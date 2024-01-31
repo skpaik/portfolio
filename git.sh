@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 git add .
-git commit -m "Global Contents Added"
-git push origin main
+git commit -m "Static Page contents Updated"
+git push origin markdown-blog

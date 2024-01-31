@@ -1,12 +1,19 @@
 import fs from "fs";
 import path from "path";
-import { BlogContent, BlogContentMd, BlogMenu } from "@/app/_models/BlogModels";
 import { loadContents, loadJsonContents } from "@/libs/JsonFileService";
 import { toTitleCase } from "@/libs/Utils";
 import {
   getBlogContentListMD,
   getBlogContentMd,
 } from "@/libs/MarkDownFileService";
+import {
+  BlogContentMd,
+  BlogDetailModel,
+  BlogListModel,
+  BlogMenu,
+  BlogStaticContent,
+} from "@/app/_models/BlogModels";
+import { GlobalContent } from "@/app/_models/ContentsModel";
 
 const targetPath = "./src/json_data/blog";
 
@@ -86,13 +93,13 @@ export async function getBlogMenu(
 
 export async function getBlogContentList(
   currentPage: string,
-): Promise<BlogContent[]> {
+): Promise<BlogContentMd[]> {
   try {
     const folderPath = targetPath + "/" + currentPage + "/";
 
     const jsonFiles = await findAllJsonFiles(folderPath);
 
-    let blogContentList: BlogContent[] = [];
+    let blogContentList: BlogContentMd[] = [];
 
     for (let i = 0; i < jsonFiles.length; i++) {
       const url = jsonFiles[i].replace(".json", "");
@@ -100,11 +107,11 @@ export async function getBlogContentList(
       if (url !== "index") {
         const endUrl = "/blog/" + currentPage + "/" + url;
 
-        const blogContent: BlogContent = await loadJsonContents(endUrl);
+        const blogContent: BlogContentMd = await loadJsonContents(endUrl);
 
         blogContent.url = endUrl;
         blogContent.slug = url;
-        blogContent.page = currentPage;
+        blogContent.category = currentPage;
 
         blogContentList.push(blogContent);
       }
@@ -138,14 +145,37 @@ export async function findAllJsonFiles(folderPath: string): Promise<string[]> {
   }
 }
 
-export async function loadBlogContent(page: string, slug: string) {
+export async function loadBlogDetails(
+  category: string,
+  slug: string,
+): Promise<BlogDetailModel> {
+  const blogMenuList: BlogMenu[] = await getBlogMenu(category);
+
+  const blogContent: BlogContentMd = await getBlogContentMd(category, slug);
+
   const globalContents = await loadContents("global");
 
-  const fileContents = getBlogContentMd(page, slug);
+  const globalContent: GlobalContent = JSON.parse(globalContents);
 
-  const obj1 = JSON.parse(globalContents);
-  // const obj2 = JSON.parse(fileContents);
+  return {
+    blogContent,
+    blogMenuList,
+    globalContent: globalContent,
+  };
+}
 
-  return fileContents;
-  //return {...obj1, ...fileContents};
+export async function loadBlogList(category: string): Promise<BlogListModel> {
+  const blogStaticContent: BlogStaticContent = await loadJsonContents(
+    "blog/" + category + "/index",
+  );
+
+  const blogContentList: BlogContentMd[] = await getBlogContentListMD(category);
+
+  const blogMenuList: BlogMenu[] = await getBlogMenu(category);
+
+  return {
+    blogContentList,
+    blogMenuList,
+    blogStaticContent,
+  };
 }

@@ -1,14 +1,14 @@
-// Generate segments for both [category] and [product]
 import HeroBanner from "@/app/_components/HeaderBanner";
-import {
-  getAllUrlInAllFoldersInPathMd,
-  getBlogMenu,
-  loadBlogContent,
-} from "@/libs/BlogUtil";
-import { BlogContent, BlogContentMd, BlogMenu } from "@/app/_models/BlogModels";
 import PageContents from "@/app/_components/PageContents";
 import SideBar from "@/app/_components/blog/SideBar";
 import BlogDetail from "@/app/_components/blog/BlogDetail";
+
+import {
+  getAllUrlInAllFoldersInPathMd,
+  loadBlogDetails,
+} from "@/libs/BlogUtil";
+
+import { BlogContentMd, BlogDetailModel } from "@/app/_models/BlogModels";
 
 export async function generateStaticParams() {
   const blogContentsMd = await getAllUrlInAllFoldersInPathMd();
@@ -29,25 +29,24 @@ type Props = {
 export default async function BlogSlug({ params }: { params: Props }) {
   const { category, slug } = params;
 
-  const blogMenuList: BlogMenu[] = await getBlogMenu(category);
-  // const blogContent: BlogContent = await loadJsonContents("/blog/" + page + "/" + slug)
-  const blogContent: BlogContentMd = await loadBlogContent(category, slug);
+  const blogDetail: BlogDetailModel = await loadBlogDetails(category, slug);
 
   return (
     <>
       <HeroBanner
-        title={blogContent.title}
-        subtitle={blogContent.intro}
+        title={blogDetail.blogContent.title}
+        subtitle={blogDetail.blogContent.intro}
       ></HeroBanner>
       <PageContents classNames="">
         <div className="grid gap-2 lg:grid-cols-4">
           <div className="rounded-lg">
-            <SideBar sideBarList={blogMenuList}></SideBar>
+            <SideBar sideBarList={blogDetail.blogMenuList}></SideBar>
           </div>
           <div className="rounded-lg lg:col-span-3">
             <BlogDetail
-              blogContent={blogContent}
-              currentPage="page1"
+              blogContent={blogDetail.blogContent}
+              globalContent={blogDetail.globalContent}
+              currentPage={category}
             ></BlogDetail>
           </div>
         </div>

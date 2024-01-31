@@ -13,8 +13,7 @@ export interface BaseStaticContent extends GlobalContent {
   contentHtml?: string;
 }
 
-export interface LayoutContent {
-  devFullName: string;
+export interface LayoutContent extends GlobalContent {
   metadata: Metadata;
   header: HeaderContent;
   footer: FooterContent;
@@ -50,7 +49,6 @@ export interface FooterContent {
 }
 
 export interface HomeContent extends BaseStaticContent {
-  devFullName: string;
   devAvatarURL: string;
   titleDetail: string;
   techStackTitle: string;
@@ -97,7 +95,10 @@ export interface CompanyIWork {
   skills: [string];
 }
 
-export interface StaticContent extends BaseStaticContent {}
+export interface StaticContent extends BaseStaticContent {
+  lastUpdated: Date;
+}
+
 export interface AboutContent extends BaseStaticContent {}
 
 export interface TermsContent extends BaseStaticContent {}
@@ -137,7 +138,6 @@ export interface SocialContentItem {
 }
 
 export interface SocialContent extends BaseStaticContent {
-  devFullName: string;
   items: SocialContentItem[];
   itemHeaders: SocialContentItem;
 }

@@ -1,115 +1,122 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import {BlogContentMd} from "@/app/_models/BlogModels";
-import {remarkContent} from "@/libs/remarking";
-import {loadContents} from "@/libs/JsonFileService";
+
+import readingTime from "reading-time";
+
+import { BlogContentMd } from "@/app/_models/BlogModels";
+import { remarkContent } from "@/libs/remarking";
+import { loadContents } from "@/libs/JsonFileService";
 
 function getDirPath(category: string) {
-    const mdDirectory = path.join(
-        process.cwd(),
-        `/src/json_data/blog/${category}`,
-    );
-    return mdDirectory;
+  const mdDirectory = path.join(
+    process.cwd(),
+    `/src/json_data/blog/${category}`,
+  );
+  return mdDirectory;
 }
 
 export async function getBlogContentMd(category: string, slug: string) {
-    const mdDirectory = getDirPath(category);
+  const mdDirectory = getDirPath(category);
 
-    //const slug = slug.replace(/\.md$/, '');
+  //const slug = slug.replace(/\.md$/, '');
 
-    // Read markdown file as string
-    const fullPath = path.join(mdDirectory, `${slug}.md`);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
+  // Read markdown file as string
+  const fullPath = path.join(mdDirectory, `${slug}.md`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
 
-    //log_con("fileContents", fileContents)
+  //log_con("fileContents", fileContents)
 
-    // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents);
+  // Use gray-matter to parse the post metadata section
+  const matterResult = matter(fileContents);
 
-    const contentHtml = await remarkContent(matterResult.content);
+  const contentHtml = await remarkContent(matterResult.content);
+  const reading_time = readingTime(matterResult.content);
 
-    //log_con("matterResult", contentHtml)
+  //log_con("matterResult", contentHtml)
 
-    const endUrl = "/blog/" + category + "/" + slug;
+  const endUrl = "/blog/" + category + "/" + slug;
 
-    const blogContent: BlogContentMd = {
-        slug: endUrl,
-        category: category,
-        contents: contentHtml,
-        ...matterResult.data,
-    };
+  const blogContent: BlogContentMd = {
+    slug: endUrl,
+    category: category,
+    contentHtml: contentHtml,
+    contents: matterResult.content,
+    readingTime: reading_time,
+    ...matterResult.data,
+  };
 
-    return blogContent;
+  return blogContent;
 }
 
 function getEachBlogContentMd(fileName: string, category: string) {
-    const mdDirectory = getDirPath(category);
+  const mdDirectory = getDirPath(category);
 
-    const slug = fileName.replace(/\.md$/, "");
+  const slug = fileName.replace(/\.md$/, "");
 
-    // Read markdown file as string
-    const fullPath = path.join(mdDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
+  // Read markdown file as string
+  const fullPath = path.join(mdDirectory, fileName);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
 
-    // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents);
-    const endUrl = "/blog/" + category + "/" + slug;
+  // Use gray-matter to parse the post metadata section
+  const matterResult = matter(fileContents);
+  const endUrl = "/blog/" + category + "/" + slug;
 
-    const blogContent: BlogContentMd = {
-        url: endUrl,
-        slug: slug,
-        category: category,
-        ...matterResult.data,
-    };
+  const blogContent: BlogContentMd = {
+    url: endUrl,
+    slug: slug,
+    category: category,
+    ...matterResult.data,
+  };
 
-    return blogContent;
+  return blogContent;
 }
 
 export async function getBlogContentListMD(
-    currentCategory: string,
+  currentCategory: string,
 ): Promise<BlogContentMd[]> {
+  try {
     const mdDirectory = getDirPath(currentCategory);
-    try {
-        const fileNames = fs.readdirSync(mdDirectory);
 
-        let allPostsData: BlogContentMd[] = fileNames.map((fileName) => {
-            return getEachBlogContentMd(fileName, currentCategory);
-        });
+    const fileNames = fs.readdirSync(mdDirectory);
 
-        allPostsData = allPostsData?.filter((x) => !x.slug.endsWith(".json"));
+    let allPostsData: BlogContentMd[] = fileNames.map((fileName) => {
+      return getEachBlogContentMd(fileName, currentCategory);
+    });
 
-        return allPostsData;
-    } catch (error) {
-        //console.error('Error:', error.message);
-        return []; // Return -1 to indicate an error
-    }
+    allPostsData = allPostsData?.filter((x) => !x.slug.endsWith(".json"));
+
+    return allPostsData;
+  } catch (error) {
+    //console.error('Error:', error.message);
+    return []; // Return -1 to indicate an error
+  }
 }
 
 export async function getMdContent(file_name: string) {
-    const mdDirectory = path.join(process.cwd(), `/src/json_data/`);
+  const mdDirectory = path.join(process.cwd(), `/src/json_data/`);
 
-    // Read markdown file as string
-    const fullPath = path.join(mdDirectory, `${file_name}.md`);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
+  // Read markdown file as string
+  const fullPath = path.join(mdDirectory, `${file_name}.md`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
 
-    // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents);
+  // Use gray-matter to parse the post metadata section
+  const matterResult = matter(fileContents);
 
-    const contentHtml = await remarkContent(matterResult.content);
+  const contentHtml = await remarkContent(matterResult.content);
 
-    return {
-        contentHtml,
-        ...matterResult.data,
-    };
+  return {
+    contentHtml,
+    ...matterResult.data,
+  };
 }
 
 export async function loadPageContentMd(file: string) {
-    const globalContents = await loadContents("global");
+  const globalContents = await loadContents("global");
 
-    const fileContents = await getMdContent(file);
+  const fileContents = await getMdContent(file);
 
-    const obj1 = JSON.parse(globalContents);
+  const obj1 = JSON.parse(globalContents);
 
-    return {...obj1, ...fileContents};
+  return { ...obj1, ...fileContents };
 }

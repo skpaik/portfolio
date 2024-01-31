@@ -2,11 +2,11 @@
 import { toDateFormat } from "@/libs/Utils";
 
 import Link from "next/link";
-import { BlogContent } from "@/app/_models/BlogModels";
+import { BlogContentMd } from "@/app/_models/BlogModels";
 import Badge from "@/app/_components/ui/Badge";
 
 type Props = {
-  blogList: BlogContent[];
+  blogList: BlogContentMd[];
   currentPage: string;
 };
 
@@ -14,7 +14,7 @@ export default function BlogList({ blogList }: Props) {
   return (
     <div className="max-w">
       <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 items-center">
-        {blogList.map((blogContent: BlogContent, index) => {
+        {blogList.map((blogContent: BlogContentMd, index) => {
           return (
             <article
               key={index}
@@ -25,13 +25,15 @@ export default function BlogList({ blogList }: Props) {
                   dateTime="2022-10-10"
                   className="block text-xs text-gray-500"
                 >
-                  {toDateFormat(blogContent.dateTime)}
+                  {blogContent.dateTime && toDateFormat(blogContent.dateTime)}
                 </time>
-                <Link href={blogContent.url}>
-                  <h3 className="mt-0.5 text-lg font-medium text-gray-900">
-                    {blogContent.title}
-                  </h3>
-                </Link>
+                {blogContent.url && (
+                  <Link href={blogContent.url}>
+                    <h3 className="mt-0.5 text-lg font-medium text-gray-900">
+                      {blogContent.title}
+                    </h3>
+                  </Link>
+                )}
                 <div className="mt-4 flex flex-wrap gap-1">
                   {blogContent.tags?.map((tech, tech_index) => {
                     return <Badge key={tech_index} title={tech}></Badge>;

@@ -10,8 +10,6 @@ type Props = {
 
 export default async function StaticPage({ pageName }: Props) {
   const pageContent: StaticContent = await loadPageContentMd(pageName);
-  log_con("pageContent TermsContent", JSON.stringify(pageContent));
-
   return (
     <>
       <HeroBanner

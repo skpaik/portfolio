@@ -10,6 +10,7 @@ export interface BaseStaticContent extends GlobalContent {
   pageSubTitle: string;
   intro: string;
   contents: [string];
+  contentHtml?: string;
 }
 
 export interface LayoutContent {
@@ -96,6 +97,7 @@ export interface CompanyIWork {
   skills: [string];
 }
 
+export interface StaticContent extends BaseStaticContent {}
 export interface AboutContent extends BaseStaticContent {}
 
 export interface TermsContent extends BaseStaticContent {}

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 git add .
-git commit -m "Global Contents Added"
+git commit -m "Static Page contents Updated"
 git push origin main

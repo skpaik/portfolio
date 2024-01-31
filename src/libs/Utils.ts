@@ -27,3 +27,8 @@ export function log_con(key: string, value: string) {
   console.log("Key: " + key);
   console.log("Value: " + value);
 }
+
+export function log_con_obj(key: string, value: object) {
+  console.log("Key: " + key);
+  console.log("Value OBJ: " + JSON.stringify(value));
+}

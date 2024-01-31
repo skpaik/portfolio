@@ -1,6 +1,7 @@
 ---
 pageTitle: Privacy policy
 pageSubTitle: Senior Software Engineer Portfolio
+lastUpdated: 2024-01-31
 ---
 
 ## Introduction
@@ -45,5 +46,3 @@ Sudipta Kumar Paik reserves the right to update this Privacy Policy at any time.
 ## Contact Information
 
 If you have any questions or concerns about this Privacy Policy, please contact Sudipta Kumar Paik at [sdiptapaik@gmail.com].
-
-Last Updated: [2024-01-31]

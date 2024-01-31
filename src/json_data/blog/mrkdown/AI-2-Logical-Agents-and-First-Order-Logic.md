@@ -1,6 +1,6 @@
 ---
 title: 'AI 2: Logical Agents and First-Order Logic'
-date: '2021-02-22'
+dateTime: '2021-02-22'
 tags: ['AI', 'Artificial Intelligence', 'Problem-Solving Agents', 'Search Algorithms', 'Uniformed Search', 'Heuristic Functions']
 draft: false
 summary: AI questions on Problem-Solving Agents answered by Jeff Russ

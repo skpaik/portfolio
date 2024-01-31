@@ -1,6 +1,7 @@
 ---
 pageTitle: About
 pageSubTitle: Senior Software Engineer Portfolio
+lastUpdated: 2024-01-31
 ---
 Hello, I'm Sudipta Kumar Paik, a seasoned Senior Software Engineer passionate about crafting robust and scalable solutions to complex problems. With 13+ years of experience in the industry, I have honed my skills in Java, Python, NodeJs, TypeScript and AWS Lambda and have a proven track record of delivering high-quality software solutions.
 

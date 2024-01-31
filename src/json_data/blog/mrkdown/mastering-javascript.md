@@ -2,7 +2,7 @@
 title: Mastering JavaScript
 excerpt: JavaScript is the most important programming language for web development. You probably don't know it well enough!
 image: mastering-javascript.jpg
-date: '2022-03-03'
+dateTime: '2022-03-03'
 updatedDate: ''
 topic: 'vanilla-js'
 readTime: '2 min'

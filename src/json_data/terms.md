@@ -1,6 +1,7 @@
 ---
 pageTitle: Terms and Conditions
 pageSubTitle: Senior Software Engineer Portfolio
+lastUpdated: 2024-01-31
 ---
 ## Introduction
 
@@ -29,5 +30,3 @@ Sudipta Kumar Paik reserves the right to modify or replace these terms and condi
 ## Contact Information
 
 If you have any questions or concerns about these terms and conditions, please contact Sudipta Kumar Paik at [sdiptapaik@gmail.com].
-
-Last Updated: [2024-01-31]

@@ -1,9 +1,13 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+
+import readingTime  from 'reading-time';
+
 import {BlogContentMd} from "@/app/_models/BlogModels";
 import {remarkContent} from "@/libs/remarking";
 import {loadContents} from "@/libs/JsonFileService";
+
 
 function getDirPath(category: string) {
     const mdDirectory = path.join(
@@ -28,6 +32,7 @@ export async function getBlogContentMd(category: string, slug: string) {
     const matterResult = matter(fileContents);
 
     const contentHtml = await remarkContent(matterResult.content);
+    const reading_time= readingTime(matterResult.content);
 
     //log_con("matterResult", contentHtml)
 
@@ -36,7 +41,9 @@ export async function getBlogContentMd(category: string, slug: string) {
     const blogContent: BlogContentMd = {
         slug: endUrl,
         category: category,
-        contents: contentHtml,
+        contentHtml: contentHtml,
+        contents: matterResult.content,
+        readingTime: reading_time,
         ...matterResult.data,
     };
 
@@ -66,11 +73,11 @@ function getEachBlogContentMd(fileName: string, category: string) {
     return blogContent;
 }
 
-export async function getBlogContentListMD(
-    currentCategory: string,
-): Promise<BlogContentMd[]> {
-    const mdDirectory = getDirPath(currentCategory);
+export async function getBlogContentListMD(currentCategory: string,): Promise<BlogContentMd[]> {
+
     try {
+        const mdDirectory = getDirPath(currentCategory);
+
         const fileNames = fs.readdirSync(mdDirectory);
 
         let allPostsData: BlogContentMd[] = fileNames.map((fileName) => {

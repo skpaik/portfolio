@@ -3,6 +3,7 @@ pageTitle: Terms and Conditions
 pageSubTitle: Senior Software Engineer Portfolio
 lastUpdated: 2024-01-31
 ---
+
 ## Introduction
 
 Welcome to Sudipta Kumar Paik's Senior Software Engineer Portfolio ("Portfolio"). By accessing or using the Portfolio, you agree to comply with and be bound by the following terms and conditions. If you do not agree with these terms, please do not use the Portfolio.

@@ -141,5 +141,3 @@ export interface SocialContent extends BaseStaticContent {
   items: SocialContentItem[];
   itemHeaders: SocialContentItem;
 }
-
-
